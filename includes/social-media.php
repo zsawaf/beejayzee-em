@@ -139,7 +139,7 @@ class BJZM_SocialMedia {
 		$json = curl_exec($feed);
 		print_r($json);
 		curl_close($feed);
-		 
+
 		// decode json format tweets
 		$tweets=json_decode($json, true);
 
