@@ -110,7 +110,7 @@ class BJZM_SocialMedia {
 		 
 		// get oauth signature
 		$oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
-		$oauth['oauth_signature'] = $oauth_signature;
+		$oauth['oauth_signature_method'] = $oauth_signature;
 
 		// make request
 		// make auth header

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Advanced Gulp WordPress
 ===
 
@@ -39,3 +40,7 @@ Getting and Installing the Theme
 License
 --------
 Neat was released under GPL v2.
+=======
+# bjzm_starter_theme
+An advanced wordpress starter theme. Includes the Blackjet workflow, and all functionalities that are regularly used. 
+>>>>>>> fc48756f00fd9d0c671d1930fe88b54e8e19fcde
