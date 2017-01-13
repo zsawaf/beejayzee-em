@@ -194,10 +194,10 @@ gulp.task('vendorsJs', function() {
 				//'./assets/js/vendor/slider.min.js',
 				//'./assets/js/vendor/animsition.min.js',
 			])
-				.pipe(concat('vendors.js'))
+				.pipe(concat('bjzm-vendors.js'))
 				.pipe(gulp.dest('./assets/js'))
 				.pipe(rename( {
-					basename: "vendors",
+					basename: "bjzm-vendors",
 					suffix: '.min'
 				}))
 				.pipe(uglify())
