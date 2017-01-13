@@ -2720,13 +2720,13 @@ input:focus { outline: 0; }
 /** IMAGE RETINA @include image-2x(/img/image.png, 100%, auto); */
 /* ---------------------------------------------------------------------------- Responsive Usage @include r(240)  { } @include r(320)  { } @include r(480)  { } @include r(768)  { } @include r(1024) { } @include r(1280) { } ------------------------------------------------------------------------- */
 /** */
-.socialmedia__instagram ul li { float: left; width: calc(100% / 5); }
+.socialmedia__instagram ul li { float: left; width: calc(100% / 3); }
 
 .socialmedia__instagram ul li img { -o-object-fit: cover; object-fit: cover; -o-object-position: center; object-position: center; width: 100%; height: auto; }
 
-.socialmedia--instagrampadding ul li { width: calc(calc(100% / 5) - (5px - (5px / 5))); margin-bottom: 5px; margin-left: calc(5px); }
+.socialmedia--instagrampadding ul li { width: calc(calc(100% / 3) - (5px - (5px / 3))); margin-bottom: 5px; margin-left: calc(5px); }
 
-.socialmedia--instagrampadding ul li:nth-child(5n+1) { margin-left: 0; }
+.socialmedia--instagrampadding ul li:nth-child(3n+1) { margin-left: 0; }
 
 /* ---------------------------------------------------------------------------- Normalize & Santize ------------------------------------------------------------------------- */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */

@@ -64,16 +64,13 @@ class SocialMedia {
                 'action': 'get_twitter'
             },
             success: function(res) {
-                console.log(res);
                 var tweets = JSON.parse(res);
-                $('.twitter_preload').fadeOut(function(){
-                    $.each(tweets, function() {
-                        var text = this.text;
-                        var urlPattern = /(https?:\/\/[\w-]+\.[\w-]+[\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-]?)/;
-                        var reg_text = text.replaceAll(urlPattern, "<a href='$1' target='_blank'>$1</a>");                    
-                        var li = "<li><p>" + reg_text + "</p></li>";
-                        $('.socialmedia__twitterlist').append(li);
-                    });
+                $.each(tweets, function() {
+                    var text = this.text;
+                    var urlPattern = /(https?:\/\/[\w-]+\.[\w-]+[\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-]?)/;
+                    var reg_text = text.replaceAll(urlPattern, "<a href='$1' target='_blank'>$1</a>");                    
+                    var li = "<li><p>" + reg_text + "</p></li>";
+                    $('.socialmedia__twitterlist').append(li);
                 }); 
             }
         });

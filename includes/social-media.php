@@ -94,9 +94,9 @@ class BJZM_SocialMedia {
 
 		// combine request and oauth in one array
 		$oauth = array_merge($oauth, $request);
-		 
+		
 		// make base string
-		$baseURI="https://api.twitter.com/1.1/statuses/$screen_name.json";
+		$baseURI="https://api.twitter.com/1.1/statuses/user_timeline.json";
 		$method="GET";
 		$params=$oauth;
 		 
@@ -106,11 +106,12 @@ class BJZM_SocialMedia {
 		    $r[] = "$key=" . rawurlencode($value);
 		}
 		$base_info = $method."&" . rawurlencode($baseURI) . '&' . rawurlencode(implode('&', $r));
-		$composite_key = rawurlencode($this->social_media_options['t_consumer_key']) . '&' . rawurlencode($this->social_media_options['t_token_secret']);
+
+		$composite_key = rawurlencode($this->social_media_options['t_consumer_secret']) . '&' . rawurlencode($this->social_media_options['t_token_secret']);
 		 
 		// get oauth signature
 		$oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
-		$oauth['oauth_signature_method'] = $oauth_signature;
+		$oauth['oauth_signature'] = $oauth_signature;
 
 		// make request
 		// make auth header
@@ -158,10 +159,10 @@ class BJZM_SocialMedia {
 	private function _set_twitter_auth() {
 		$this->twitter_auth['oauth_consumer_key'] = $this->social_media_options['t_consumer_key'];
 		$this->twitter_auth['oauth_nonce'] = time();
-		$this->twitter_auth['signature_method'] = 'HMAC-SHA1';
+		$this->twitter_auth['oauth_signature_method'] = 'HMAC-SHA1';
 		$this->twitter_auth['oauth_version'] = '1.0';
 		$this->twitter_auth['oauth_timestamp'] = time();
-		$this->twitter_auth['oauth_token'] = $this->social_media_options['t_token'];
+		$this->twitter_auth['oauth_token'] = $this->social_media_options['t_access_token'];
 
 		$this->twitter_request['count'] = $this->social_media_options['t_count'];
 		$this->twitter_request['screen_name'] = $this->social_media_options['t_screen_name'];
