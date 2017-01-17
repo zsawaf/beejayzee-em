@@ -22,9 +22,17 @@ Text Domain: bjzm
 @import "partials/structure";
 @import "partials/mixins";
 @import "partials/variables";
+
+
+// Pages
 @import "partials/home";
 @import "partials/blog";
+
+//Components
+@import "partials/common";
+@import "partials/main-header";
 @import "partials/socialmedia";
+@import "partials/columns";
 
 /* ----------------------------------------------------------------------------
  * Normalize & Santize

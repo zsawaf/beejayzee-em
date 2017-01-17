@@ -42,6 +42,11 @@ body {
     *zoom: 1;
 }
 
+// container should inherit height of parent
+.container {
+    height: 100%;
+}
+
 
 // Remove default margins
 h1, h2, h3, h4, h5, h6, p, ul, li, ol {
@@ -79,7 +84,7 @@ a {
         outline: 0;
     }
     &:hover {
-
+        text-decoration: none;
     }
 }
 

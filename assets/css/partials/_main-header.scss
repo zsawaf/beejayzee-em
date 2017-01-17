@@ -1,0 +1,23 @@
+$menu_bg_color: #c9c9c9;
+$menu_desktop_height: 150px;
+.header {
+	// modifiers
+	@at-root #{&}--main {
+		height: $menu_desktop_height;
+		background: $menu_bg_color;
+	}
+}
+.navigation {
+	// elements
+	height: 100%;
+
+	@at-root #{&}__menu  {
+		height: 100%;
+		ul {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 100%;
+		}
+	}
+}

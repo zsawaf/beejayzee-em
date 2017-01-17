@@ -16,7 +16,9 @@
 
 <body <?php body_class(); ?>>
 	<header class="header header--main">
-		<nav class="header__navigation navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu' ) ); ?>
-		</nav>
+		<div class="container">
+			<nav class="header__navigation navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu' ) ); ?>
+			</nav>
+		</div>
 	</header>

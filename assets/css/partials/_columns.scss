@@ -1,0 +1,55 @@
+$column_padding: 50px;
+
+@mixin columns_float($column, $mq) {
+	$col_mq_selector: nth($mq, 2); // ex: lg_d_mq
+	$col_mq: nth($mq, 1); // (max-width: xxx px);
+
+	@if $col_mq == '' {
+		@include _columns_float($column, '');
+	}
+	@else {
+		@media #{$col_mq} {
+			@include _columns_float($column, $col_mq_selector);
+		}
+	}
+}
+
+@mixin _columns_float($column, $selector) {
+	$number_of_columns: #{$column};
+	$column_width: (100% / #{$number_of_columns});
+	$column_width_diff: (#{$column_padding} / #{$number_of_columns});
+
+	// prepend with underscore
+	@if $selector != "" {
+		$selector: "_#{$selector}";
+	}
+
+	@at-root #{&}_#{$column}--nopadding#{$selector} {
+		float: left;
+		width: calc(100% / #{$number_of_columns});
+	}
+
+	@at-root #{&}_#{$column}--padding_around#{$selector} {
+		float: left;
+		width: calc(#{$column_width} - (#{$column_padding} - (#{$column_width_diff})));
+		margin-bottom: $column_padding;
+		margin-left: #{$column_padding};
+		&:nth-child(#{$number_of_columns}n+1) {
+			margin-left: 0;
+		}
+	}
+}
+
+.columns {
+
+	// columns modifiers	
+	// use floats
+	@each $column in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
+		@each $mq in (('', ''), ($lg_d_mq, 'lg_d'), ($sm_d_mq, 'sm_d'), ($lg_t_mq, 'lg_t'), ($sm_t_mq, 'sm_t'), ($lg_m_mq, 'lg_m'), ($sm_m_mq, 'sm_m')) {
+			
+			// mq is a nested array, each inner array contains the actual media query as the first param and media query selector as the second param.
+			@include columns_float(#{$column}, $mq); 
+		}
+	}
+
+}

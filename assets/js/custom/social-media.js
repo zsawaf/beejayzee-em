@@ -37,7 +37,6 @@ class SocialMedia {
             },
             success: function(res) {
                 // append each instagram post to ul
-                
                 var instagrams = JSON.parse(res);
                 $.each(instagrams.data, function() {
                     var instagram = $(this)[0];
