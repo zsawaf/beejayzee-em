@@ -126,3 +126,7 @@ if (file_exists(dirname(__FILE__).'/includes/options.php')) {
 if (file_exists(dirname(__FILE__).'/includes/social-media.php')) {
     require_once( dirname(__FILE__).'/includes/social-media.php' );
 }
+
+if (file_exists(dirname(__FILE__).'/includes/theme-helper-functions.php')) {
+    require_once( dirname(__FILE__).'/includes/theme-helper-functions.php' );
+}

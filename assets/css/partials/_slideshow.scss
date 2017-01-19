@@ -1,0 +1,20 @@
+.slider {
+	li {
+		position: relative;
+	}
+	.slider__overlay {
+		@include absolutesize();
+	}
+
+	.slick-arrow {
+		position: absolute;
+		&.slick-prev {
+			bottom: -40px;
+			left: 0;
+		}
+		&.slick-next {
+			bottom: -40px;
+			right: 0;
+		}
+	}
+}

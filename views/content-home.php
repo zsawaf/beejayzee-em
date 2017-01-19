@@ -50,6 +50,41 @@
 					
 				</div>
 			</section>
+			<section>
+				<h1>Srcset Demo</h1>
+				<div class="container">
+					<?php srcset('http://lorempixel.com/1920/800', 'http://lorempixel.com/991/500', 'http://lorempixel.com/480/200') ?>
+				</div>
+			</section>
+			<section>
+				<h1>Slideshow Demo</h1>
+				<ul id="s1" class="slider">
+					<li>
+						<img src="http://lorempixel.com/991/500" alt="">
+						<div class="slider__overlay">
+							<h4>This is content</h4>
+						</div>
+					</li>
+					<li>
+						<img src="http://lorempixel.com/991/500" alt="">
+						<div class="slider__overlay">
+							<h4>This is content</h4>
+						</div>
+					</li>
+					<li>
+						<img src="http://lorempixel.com/991/500" alt="">
+						<div class="slider__overlay">
+							<h4>This is content</h4>
+						</div>
+					</li>
+					<li>
+						<img src="http://lorempixel.com/991/500" alt="">
+						<div class="slider__overlay">
+							<h4>This is content</h4>
+						</div>
+					</li>
+				</ul>
+			</section>
 		</div>
 	</div>
 </div>
