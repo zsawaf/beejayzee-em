@@ -14,7 +14,7 @@ Text Domain: bjzm
 /* ----------------------------------------------------------------------------
  * 3rd Party
  * ------------------------------------------------------------------------- */
-@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
 
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
@@ -29,6 +29,7 @@ Text Domain: bjzm
 @import "partials/blog";
 
 //Components
+@import "partials/container";
 @import "partials/common";
 @import "partials/main-header";
 @import "partials/socialmedia";

@@ -184,7 +184,7 @@ gulp.task('styles', function () {
 */
 gulp.task('vendorsJs', function() {
 	return 	gulp.src([
-				'./assets/js/vendor/bootstrap.js',
+				//'./assets/js/vendor/bootstrap.js',
 				//'./assets/js/vendor/jquery.matchHeight.js',
 				//'./assets/js/vendor/flexibility.js',
 				//'./assets/js/vendor/jquery.fancybox.js'
