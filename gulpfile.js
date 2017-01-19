@@ -191,7 +191,7 @@ gulp.task('vendorsJs', function() {
 				/**
 				 * Uncomment the following to use in your project
 				 */
-				//'./assets/js/vendor/slider.min.js',
+				'./assets/js/vendor/slider.min.js',
 				//'./assets/js/vendor/animsition.min.js',
 			])
 				.pipe(concat('vendors.js'))
@@ -215,6 +215,7 @@ gulp.task('scriptsJs', function() {
 	return 	gulp.src([	// manually add all scripts in here so as to be able to control the order
 				'./assets/js/custom/single-page-updown.js', 
 				'./assets/js/custom/scripts.js',
+				'./assets/js/custom/slideshow.js',
 			])
 				.pipe(concat('custom.js'))
 				.pipe(babel({ presets: ['es2015'] }))
