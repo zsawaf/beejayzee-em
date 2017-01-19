@@ -194,10 +194,10 @@ gulp.task('vendorsJs', function() {
 				'./assets/js/vendor/slider.min.js',
 				//'./assets/js/vendor/animsition.min.js',
 			])
-				.pipe(concat('vendors.js'))
+				.pipe(concat('bjzm-vendors.js'))
 				.pipe(gulp.dest('./assets/js'))
 				.pipe(rename( {
-					basename: "vendors",
+					basename: "bjzm-vendors",
 					suffix: '.min'
 				}))
 				.pipe(uglify())
@@ -215,13 +215,13 @@ gulp.task('scriptsJs', function() {
 	return 	gulp.src([	// manually add all scripts in here so as to be able to control the order
 				'./assets/js/custom/single-page-updown.js', 
 				'./assets/js/custom/slideshow.js',
-				'./assets/js/custom/scripts.js',
+				'./assets/js/custom/bjzm-scripts.js',
 			])
-				.pipe(concat('custom.js'))
+				.pipe(concat('bjzm-scripts.js'))
 				.pipe(babel({ presets: ['es2015'] }))
 				.pipe(gulp.dest('./assets/js'))
 				.pipe(rename( {
-					basename: "custom",
+					basename: "bjzm-scripts",
 					suffix: '.min'
 				}))
 				.pipe(uglify())
