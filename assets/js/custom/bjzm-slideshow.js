@@ -25,6 +25,7 @@
  * 	
  * -------------------------------------------- */
 
+
 class Slider {
 	constructor(id=null, settings=null) {
 		if (id == null) {
@@ -78,3 +79,9 @@ class Slider {
 		return $(this.selector).slick('slickCurrentSlide');
 	}
 }
+
+
+
+
+
+

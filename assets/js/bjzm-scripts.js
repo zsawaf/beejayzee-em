@@ -1,10 +1,6 @@
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /*
 *
@@ -229,109 +225,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	};
 })(jQuery);
 
-/* --------------------------------------------
- *
- * Initialize sliders utilizing slick.js
- *
- * Dependencies:
- * 	- Jquery
- * 	- Slick
- *
- * Parameters:
- * 	- id: id of slider
- * 	- settings: settings to use on slider. 
- * 	
- * Methods Supported:
- * 	- initialize: initialize the slider with given id and settings
- * 	- destroy: destroy the slider.
- * 	- add: given html string, add slide to slider
- * 	- remove: given index, remove slide in that index
- * 	- play: play slideshow
- * 	- pause: pause slideshow
- * 	- next: go to next slide
- * 	- prev: go to prev slide
- * 	- goto: given index, go to that slide
- *
- * - getCurrentSlide: return current slide
- * 	
- * -------------------------------------------- */
-
-var Slider = function () {
-	function Slider() {
-		var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-		var settings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-
-		_classCallCheck(this, Slider);
-
-		if (id == null) {
-			return false; // we need an id for the slider
-		}
-
-		this.id = id;
-		this.selector = "#" + id;
-		this.settings = settings;
-
-		this.initialize();
-	}
-
-	_createClass(Slider, [{
-		key: 'initialize',
-		value: function initialize() {
-			$(this.selector).slick(this.settings);
-		}
-	}, {
-		key: 'destroy',
-		value: function destroy() {
-			$(this.selector).slick('unslick');
-		}
-	}, {
-		key: 'add',
-		value: function add(html) {
-			$(this.selector).slick('slickAdd', html);
-		}
-	}, {
-		key: 'remove',
-		value: function remove(index) {
-			$(this.selector).slick('slickRemove', index);
-		}
-	}, {
-		key: 'play',
-		value: function play() {
-			$(this.selector).slick('slickPlay');
-		}
-	}, {
-		key: 'pause',
-		value: function pause() {
-			$(this.selector).slick('slickPause');
-		}
-	}, {
-		key: 'next',
-		value: function next() {
-			$(this.selector).slick('slickNext');
-		}
-	}, {
-		key: 'prev',
-		value: function prev() {
-			$(this.selector).slick('slickPrev');
-		}
-	}, {
-		key: 'gotto',
-		value: function gotto(index) {
-			$(this.selector).slick('slickGoTo', index);
-		}
-	}, {
-		key: 'getCurrentSlide',
-		value: function getCurrentSlide() {
-			return $(this.selector).slick('slickCurrentSlide');
-		}
-	}]);
-
-	return Slider;
-}();
 /**
  * scripts.js
  */
 
 $(document).ready(function () {
 	var slider = new Slider("s1");
+	DoShit.someFunction();
 });

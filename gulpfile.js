@@ -214,7 +214,6 @@ gulp.task('vendorsJs', function() {
 gulp.task('scriptsJs', function() {
 	return 	gulp.src([	// manually add all scripts in here so as to be able to control the order
 				'./assets/js/custom/single-page-updown.js', 
-				'./assets/js/custom/slideshow.js',
 				'./assets/js/custom/bjzm-scripts.js',
 			])
 				.pipe(concat('bjzm-scripts.js'))

@@ -8,10 +8,13 @@
   "dependencies": {},
   "devDependencies": {
     "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.4.0",
+    "buffer": "^5.0.2",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "*",
     "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
     "gulp-cache": "^0.2.8",
     "gulp-concat": "^2.5.2",
     "gulp-consolidate": "^0.2.0",
@@ -39,6 +42,7 @@
     "gulp-util": "^3.0.4",
     "gulp-wp-rev": "0.0.1",
     "gulp-zip": "^2.0.3",
-    "tiny-lr": "0.0.7"
+    "tiny-lr": "0.0.7",
+    "vinyl-buffer": "^1.0.0"
   }
 }
