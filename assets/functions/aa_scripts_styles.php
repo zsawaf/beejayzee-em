@@ -90,7 +90,7 @@ function aa_styles()
      *
      */
     //cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css
-    wp_register_style('slick', get_template_directory_uri() . 'cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array(), '1.0', 'all');
+    wp_register_style('slick', 'http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array(), '1.0', 'all');
     wp_enqueue_style('slick');
     
     wp_register_style('aa_style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');

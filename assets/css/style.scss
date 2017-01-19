@@ -19,9 +19,11 @@ Text Domain: bjzm
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
  * ------------------------------------------------------------------------- */
-@import "partials/structure";
-@import "partials/mixins";
 @import "partials/variables";
+@import "partials/mixins";
+
+@import "partials/structure";
+
 
 
 // Pages
@@ -29,6 +31,7 @@ Text Domain: bjzm
 @import "partials/blog";
 
 //Components
+@import "partials/fonts";
 @import "partials/container";
 @import "partials/common";
 @import "partials/main-header";

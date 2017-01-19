@@ -1,0 +1,10 @@
+$font_url: './assets/fonts/';
+
+$primary_font_name: 'Kamerik';
+$secondary_font_name: '';
+$tertiary_font_name: '';
+
+@include font-face($primary_font_name, "#{$font_url}/Kamerik205-Regular2", normal, normal);
+@include font-face($primary_font_name, "#{$font_url}/Kamerik205-LightOblique", lighter, italic);
+@include font-face($primary_font_name, "#{$font_url}/Kamerik205-Regular4", bold, normal);
+@include font-face($primary_font_name, "#{$font_url}/Kamerik205-Regular8", bolder, normal);
