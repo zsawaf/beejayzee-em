@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    var socialmedia = new SocialMedia();
-    socialmedia.get_instagram();
-    socialmedia.get_twitter();
+    // var socialmedia = new SocialMedia();
+    // socialmedia.get_instagram();
+    // socialmedia.get_twitter();
 });
 
 /**

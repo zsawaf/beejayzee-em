@@ -1,0 +1,12 @@
+/**
+ * Admin stylesheet
+ *
+ * In case we need to change wp admin styles.
+ * - Hide menu items
+ * - change widths
+ * - Custom "plugins"
+ */
+
+#menu-posts-fmemailverification {
+	display: none;
+}
