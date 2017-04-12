@@ -44,15 +44,12 @@ function aa_scripts()
         wp_enqueue_script('aa_vendorsJs'); // Enqueue it!
 
         wp_register_script('aa_customJs', get_template_directory_uri() . '/assets/js/custom.min.js'); // Custom scripts
-        wp_enqueue_script('aa_customJs'); // Enqueue it!
-
-
-        wp_register_script('socialmedia-script', get_template_directory_uri() . '/assets/js/custom/social-media.js', array('jquery'), null, true); 
-        wp_localize_script('socialmedia-script', ASSETS, array(
+        wp_localize_script('aa_customJs', ASSETS, array(
             'assets_url' => get_template_directory_uri().'/assets/img',
-            'ajaxurl' => admin_url('admin-ajax.php')
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'ajax_nonce' => wp_create_nonce('bjzm_nonce'),
         ));
-        wp_enqueue_script('socialmedia-script');
+        wp_enqueue_script('aa_customJs'); // Enqueue it!
 
 
         /**
