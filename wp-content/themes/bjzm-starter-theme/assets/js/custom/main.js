@@ -1,8 +1,18 @@
-"use strict";
 
-var R = require('ramda');
+var customModule = require('./custom-module');
 
-var square = function square (x) { return x * x; }  
-var squares = R.chain(square, [1, 2, 3, 4, 5, 6]); 
 
-document.getElementById('response').innerHTML = squares
+
+var ZeesClass = require('./zees-classy');
+
+
+
+customModule.myCoolFunction();
+customModule.anotherFunction();
+customModule.whoa();
+
+new ZeesClass();
+
+jQuery(document).ready(function(){
+	jQuery("p").hide();
+})

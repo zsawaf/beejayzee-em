@@ -17,8 +17,8 @@ function bjzm_scripts()
 		wp_register_script('bjzm-vendors', get_template_directory_uri() . '/assets/js/bjzm-vendors.min.js', array('jquery'));
 		wp_enqueue_script('bjzm-vendors');
 
-	/*	wp_register_script('bjzm-vendors', get_template_directory_uri() . '/assets/js/bjzm-vendors.min.js', array('jquery'));
-		wp_enqueue_script('bjzm-vendors');*/
+		wp_register_script('main-scripts', get_template_directory_uri() . '/assets/js/dist/main-bundle.js');
+		wp_enqueue_script('main-scripts');
 
 		wp_register_script('bjzm-scripts', get_template_directory_uri() . '/assets/js/bjzm-scripts.min.js');
 		wp_enqueue_script('bjzm-scripts');

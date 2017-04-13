@@ -64,6 +64,18 @@ var project 		= 'neat', // Project name, used for build zip.
 		sourcemaps   = require('gulp-sourcemaps'),
 		modernizr 	 = require('gulp-modernizr'),
 		iconfont 	 = require('gulp-iconfont'),
+
+		babelify   = require('babelify'),
+		browserify = require('browserify'),
+		buffer     = require('vinyl-buffer'),
+		//coffeeify  = require('coffeeify'),
+		livereload = require('gulp-livereload'),
+		//merge      = require('merge'),
+		rename     = require('gulp-rename'),
+		source     = require('vinyl-source-stream'),
+		watchify   = require('watchify'),
+
+
 		runTimestamp = Math.round(Date.now()/1000);
 
 
@@ -243,7 +255,7 @@ var config = {
     js: {
         src: './assets/js/custom/main.js',       // Entry point
         outputDir: './assets/js/dist/',  // Directory to save bundle to
-        mapDir: '.assets/js/dist/maps/',      // Subdirectory to save maps to
+        mapDir: './assets/js/dist/maps/',      // Subdirectory to save maps to
         outputFile: 'main-bundle.js' // Name to use for bundle
     },
 };
@@ -258,16 +270,17 @@ function bundle (bundler) {
       .pipe(buffer())                                               // Convert to gulp pipeline
       .pipe(rename(config.js.outputFile))          // Rename output from 'main.js'
                                                                               //   to 'bundle.js'
-      .pipe(sourceMaps.init({ loadMaps : true }))  // Strip inline source maps
-      .pipe(sourceMaps.write(config.js.mapDir))    // Save source maps to their
+      .pipe(sourcemaps.init({ loadMaps : true }))  // Strip inline source maps
+      .pipe(sourcemaps.write(config.js.mapDir))    // Save source maps to their
                                                                                       //   own directory
       .pipe(gulp.dest(config.js.outputDir))        // Save 'bundle' to build/
-      .pipe(livereload());                                       // Reload browser if relevant
+      .pipe(livereload())                                     // Reload browser if relevant
+      .pipe( notify( { message: 'Browserify bundle complete!', onLast: true } ) );
 }
 
 gulp.task('bundle', function () {
     var bundler = browserify(config.js.src)  // Pass browserify the entry point
-                                .transform(coffeeify)      //  Chain transformations: First, coffeeify . . .
+                                //.transform(coffeeify)      //  Chain transformations: First, coffeeify . . .
                                 .transform(babelify, { presets : [ 'es2015' ] });  // Then, babelify, with ES2015 preset
 
     bundle(bundler);  // Chain other options -- sourcemaps, rename, etc.
@@ -376,12 +389,12 @@ gulp.task('buildImages', function() {
 
  // Package Distributable Theme
  gulp.task('build', function(cb) {
- 	runSequence('styles', 'cleanup', 'vendorsJs', 'scriptsJs',  'buildFiles', 'buildImages', 'buildZip','cleanupFinal', cb);
+ 	runSequence('styles', 'cleanup', 'vendorsJs', 'bundle',  'buildFiles', 'buildImages', 'buildZip','cleanupFinal', cb);
  });
 
 
  // Watch Task
- gulp.task('default', ['styles', 'vendorsJs', 'scriptsJs', 'images'], function () {
- 	gulp.watch('./assets/js/**/*.js', ['scriptsJs']);
+ gulp.task('default', ['styles', 'vendorsJs', 'bundle', 'images'], function () {
+ 	gulp.watch('./assets/js/**/*.js', ['bundle']);
  	gulp.watch('./assets/css/**/*.scss', ['styles']);
  });
