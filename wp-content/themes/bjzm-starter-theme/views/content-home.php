@@ -14,6 +14,11 @@
 		</section>
 	
 		<div class="container">
+			
+			<section id="main-content">
+				
+			</section>
+
 			<section>
 				<h3>4 Columns</h3>
 				<div class="columns columns--float columns--padding clear">
