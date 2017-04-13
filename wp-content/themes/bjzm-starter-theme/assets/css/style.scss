@@ -1,0 +1,51 @@
+/*!
+Theme Name: BJZM
+Author: Zafer Sawaf and Matt McCollough
+Author URI: www.blackjet.ca
+Description: Blackjet's advanced starter Wordpress theme. 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bjzm
+*/
+
+
+
+/* ----------------------------------------------------------------------------
+ * 3rd Party
+ * ------------------------------------------------------------------------- */
+//@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* ----------------------------------------------------------------------------
+ * Mixins & Variables
+ * ------------------------------------------------------------------------- */
+@import "partials/variables";
+@import "partials/mixins";
+
+@import "partials/structure";
+
+
+
+// Pages
+@import "partials/home";
+@import "partials/blog";
+
+//Components
+@import "partials/fonts";
+@import "partials/container";
+@import "partials/common";
+@import "partials/main-header";
+@import "partials/socialmedia";
+@import "partials/columns";
+@import "partials/slideshow";
+@import "partials/form";
+
+/* ----------------------------------------------------------------------------
+ * Normalize & Santize
+ * ------------------------------------------------------------------------- */
+@import "vendor/normalize";
+@import "vendor/sanitize";
+
+
+/* WPCore */
+@import "partials/wpcore";

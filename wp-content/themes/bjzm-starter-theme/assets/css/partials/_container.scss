@@ -1,0 +1,25 @@
+/**
+ * Default containers
+ */
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: $container_sm_width;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: $container_md_width;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: $container_lg_width;
+  }
+}
