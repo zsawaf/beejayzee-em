@@ -15,8 +15,28 @@
 	
 		<div class="container">
 			
-			<section id="main-content">
-				
+			<section id="one-div">
+				<br><br>
+				<h2>First Section</h2>
+				<br><br><br><br><br><br><br><br><br><br><br>
+			</section>
+
+			<section id="second-thing">
+				<br><br>
+				<h2>Second Section</h2>
+				<br><br><br><br><br><br><br><br><br><br><br>
+			</section>
+
+			<section id="third-thing">
+				<br><br>
+				<h2>Third Section</h2>
+				<br><br><br><br><br><br><br><br><br><br><br>
+			</section>
+
+			<section id="fourth-thing">
+				<br><br>
+				<h2>Fourth Section</h2>
+				<br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 
 			<section>
