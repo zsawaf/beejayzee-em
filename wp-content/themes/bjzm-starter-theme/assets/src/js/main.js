@@ -1,4 +1,1 @@
-
-jQuery(document).ready(function(){
-	jQuery("p").hide();
-})
+require('./single-page-upadown');

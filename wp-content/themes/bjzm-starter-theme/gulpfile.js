@@ -84,10 +84,10 @@ var project 		= 'neat', // Project name, used for build zip.
 
 var config = {
     js: {
-        src: './assets/src/js/main.js',       // Entry point
-        outputDir: './assets/dist/js/',  // Directory to save bundle to
-        mapDir: './maps/',      // Subdirectory to save maps to
-        outputFile: 'main-bundle.js' // Name to use for bundle
+        src: './assets/src/js/main.js',     	// Entry point
+        outputDir: './assets/dist/js/',  		// Directory to save bundle to
+        mapDir: './maps/',      				// Subdirectory to save maps to
+        outputFile: 'main-bundle.js' 		// Name to use for bundle
     },
 };
 
