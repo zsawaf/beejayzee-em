@@ -15,7 +15,7 @@ import BjzmScripts from './custom/bjzm-scripts';
 import slick from  './vendors/slider.min';
 import matchHeight from './vendors/jquery.matchHeight';
 
-$(document).ready(function(){
+$(document).ready(function() {
 	
 
 	var MyForm = new Form;
