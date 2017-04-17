@@ -15,25 +15,25 @@
 	
 		<div class="container">
 			
-			<section id="one-div">
+			<section id="one-div" class="some-section">
 				<br><br>
 				<h2>First Section</h2>
 				<br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 
-			<section id="second-thing">
+			<section id="second-thing" class="some-section">
 				<br><br>
 				<h2>Second Section</h2>
 				<br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 
-			<section id="third-thing">
+			<section id="third-thing" class="some-section">
 				<br><br>
 				<h2>Third Section</h2>
 				<br><br><br><br><br><br><br><br><br><br><br>
 			</section>
 
-			<section id="fourth-thing">
+			<section id="fourth-thing" class="some-section">
 				<br><br>
 				<h2>Fourth Section</h2>
 				<br><br><br><br><br><br><br><br><br><br><br>
@@ -85,25 +85,25 @@
 				<h1>Slideshow Demo</h1>
 				<ul id="s1" class="slider">
 					<li>
-						<img src="http://lorempixel.com/991/500" alt="">
+						<img src="http://lorempixel.com/700/400" alt="">
 						<div class="slider__overlay">
 							<h4>This is content</h4>
 						</div>
 					</li>
 					<li>
-						<img src="http://lorempixel.com/991/500" alt="">
+						<img src="http://lorempixel.com/700/400" alt="">
 						<div class="slider__overlay">
 							<h4>This is content</h4>
 						</div>
 					</li>
 					<li>
-						<img src="http://lorempixel.com/991/500" alt="">
+						<img src="http://lorempixel.com/700/400" alt="">
 						<div class="slider__overlay">
 							<h4>This is content</h4>
 						</div>
 					</li>
 					<li>
-						<img src="http://lorempixel.com/991/500" alt="">
+						<img src="http://lorempixel.com/700/400" alt="">
 						<div class="slider__overlay">
 							<h4>This is content</h4>
 						</div>

@@ -1,0 +1,157 @@
+/**
+ * COLUMNS MIXIN:
+ *
+ * Naming convention: 
+ * - letters are hyphen separated
+ *
+ * c: we always start with c, c stands for column *REQUIRED*
+ * #{n}: n denotes a number from 2 to 12. It represents the number of columns we want *REQUIRED*
+ *
+ * ** ADD AN UNDERSCORE BETWEEN c_#{n} and #{size} 
+ * 
+ * #{size}: also optional, tells us which media query we want these columns to be in. Check _variables.scss for a list of all media queries *OPTIONAL*
+ *
+ * Add columns--padding to parent class if you want padding. 
+ *
+ * Ex: c-4_sm-m: this would translate to 4 columns, visible on small mobiles only
+ * Ex: c-2_lg-t: this would translate to 2 columns, visible on large tablets only
+ * Ex: c-4: this would translate to 4 columns, visible across all media queries. 
+ */
+
+
+$column_padding: 50px;
+
+/**
+ * FLOAT MIXINS
+ *
+ * Use floats to create columns
+ * @param  {[type]} $column [description]
+ * @param  {[type]} $mq     [description]
+ * @return {[type]}         [description]
+ */
+@mixin columns_float($column, $mq) {
+	$col_mq_selector: nth($mq, 2); // ex: lg_d_mq
+	$col_mq: nth($mq, 1); // (max-width: xxx px);
+		
+	@if $col_mq == null {
+		@include _columns_float($column, '');
+	}
+	@else {
+		@media #{$col_mq} {
+			@include _columns_float($column, $col_mq_selector);
+		}
+	}
+}
+
+@mixin _columns_float($column, $selector) {
+	$number_of_columns: #{$column};
+
+	// prepend with underscore
+	@if $selector != '' {
+		$selector: "_#{$selector}";
+	}
+	
+	.col-#{$column}#{$selector} {
+		float: left;
+		width: calc(100% / #{$number_of_columns});
+	}
+}
+
+/**
+ * Columns using flex
+ */
+@mixin columns_flex($column, $mq) {
+	$col_mq_selector: nth($mq, 2); // ex: lg_d_mq
+	$col_mq: nth($mq, 1); // (max-width: xxx px);
+		
+	@if $col_mq == null {
+		@include _columns_flex($column, '');
+	}
+	@else {
+		@media #{$col_mq} {
+			@include _columns_flex($column, $col_mq_selector);
+		}
+	}
+}
+
+@mixin _columns_flex($column, $selector) {
+	$number_of_columns: #{$column};
+	// prepend with underscore
+	@if $selector != '' {
+		$selector: "_#{$selector}";
+	}
+	
+	.col-#{$column}#{$selector} {
+		width: calc(100% / #{$number_of_columns});
+	}
+}
+
+/**
+ * MIXIN for including padded columns
+ */
+@mixin columns_padding($column, $selector) {
+	$col_mq: nth($selector, 2);
+	$mq: nth($selector, 1);
+
+	$mq_selector: '';
+	
+	@if $col_mq != null {
+		$mq_selector: "_#{$col_mq}";
+		@media #{$mq} {
+			@include _columns_padding($column, $mq_selector);
+		}
+	}
+	@else {
+		@include _columns_padding($column, $mq_selector);
+	}
+}
+
+@mixin _columns_padding($column, $selector) {
+	$number_of_columns: #{$column};
+	$column_width: (100% / #{$number_of_columns});
+	$column_width_diff: (#{$column_padding} / #{$number_of_columns});
+
+	.col-#{$column}#{$selector} {
+		width: calc(#{$column_width} - (#{$column_padding} - (#{$column_width_diff})));
+		margin-bottom: $column_padding;
+		margin-left: #{$column_padding};
+	}
+	.col-#{$column}#{$selector}:nth-child(#{$number_of_columns}n+1) {
+		margin-left: 0;
+	}
+}
+
+
+.columns {
+	// columns modifiers	
+	// use floats
+	&.columns--float {
+		@each $mq in ((null, null), ($lg_d_mq, 'lg-d'), ($sm_d_mq, 'sm-d'), ($lg_t_mq, 'lg-t'), ($sm_t_mq, 'sm-t'), ($lg_m_mq, 'lg-m'), ($sm_m_mq, 'sm-m')) {
+			@each $column in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
+				// mq is a nested array, each inner array contains the actual media query as the first param and media query selector as the second param.
+				@include columns_float(#{$column}, $mq); 
+			}
+		}
+	}
+	&.columns--padding {
+		@each $mq in ((null, null), ($lg_d_mq, 'lg-d'), ($sm_d_mq, 'sm-d'), ($lg_t_mq, 'lg-t'), ($sm_t_mq, 'sm-t'), ($lg_m_mq, 'lg-m'), ($sm_m_mq, 'sm-m')) {
+			@each $column in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
+				@include columns_padding(#{$column}, $mq); 
+			}
+		}
+	}
+
+	&.columns--flex {
+		display: flex;
+		flex-wrap: wrap;
+
+		@each $mq in ((null, null), ($lg_d_mq, 'lg-d'), ($sm_d_mq, 'sm-d'), ($lg_t_mq, 'lg-t'), ($sm_t_mq, 'sm-t'), ($lg_m_mq, 'lg-m'), ($sm_m_mq, 'sm-m')) {
+			@each $column in 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 {
+				// mq is a nested array, each inner array contains the actual media query as the first param and media query selector as the second param.
+				@include columns_flex(#{$column}, $mq); 
+			}
+		}
+	}
+	
+
+}

@@ -1,9 +1,3 @@
-$(document).ready(function() {
-    // var socialmedia = new SocialMedia();
-    // socialmedia.get_instagram();
-    // socialmedia.get_twitter();
-});
-
 /**
  * Extend String class to include replaceAll. 
  *
@@ -75,3 +69,9 @@ class SocialMedia {
         });
     }
 }
+
+
+
+
+
+module.exports = SocialMedia;

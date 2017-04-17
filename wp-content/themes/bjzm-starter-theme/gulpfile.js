@@ -94,7 +94,6 @@ var config = {
 // This method makes it easy to use common bundling options in different tasks
 function bundle (bundler) {
 
-    // Add options to add to "base" bundler passed as parameter
     bundler
       .bundle()                                                        // Start bundle
       .pipe(source(config.js.src))                        // Entry point
@@ -200,7 +199,7 @@ gulp.task('modernizr', function() {
  * Sass output styles: https://web-design-weekly.com/2014/06/15/different-sass-output-styles/
 */
 gulp.task('styles', function () {
-	 	gulp.src('./assets/css/*.scss')
+	 	gulp.src('./assets/src/scss/*.scss')
 				.pipe(plumber())
 				.pipe(sourcemaps.init())
 				.pipe(sass({
@@ -237,67 +236,19 @@ gulp.task('styles', function () {
 */
 gulp.task('vendorsJs', function() {
 	return 	gulp.src([
-				//'./assets/js/vendor/bootstrap.js',
-				//'./assets/js/vendor/jquery.matchHeight.js',
-				//'./assets/js/vendor/flexibility.js',
-				//'./assets/js/vendor/jquery.fancybox.js'
-				/**
-				 * Uncomment the following to use in your project
-				 */
-				'./assets/js/vendor/slider.min.js',
-				//'./assets/js/vendor/animsition.min.js',
-			])
-				.pipe(concat('bjzm-vendors.js'))
-				.pipe(gulp.dest('./assets/js'))
-				.pipe(rename( {
-					basename: "bjzm-vendors",
-					suffix: '.min'
-				}))
-				.pipe(uglify())
-				.pipe(gulp.dest('./assets/js/'))
-				.pipe(notify({ message: 'Vendor scripts task complete', onLast: true }));
+		//'./assets/js/vendor/slider.min.js',
+		//ie_html5shiv
+	])
+		.pipe(concat('bjzm-vendors.js'))
+		.pipe(gulp.dest('./assets/js'))
+		.pipe(rename( {
+			basename: "bjzm-vendors",
+			suffix: '.min'
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest('./assets/js/'))
+		.pipe(notify({ message: 'Vendor scripts task complete', onLast: true }));
 });
-
-
-/**
- * Scripts: Custom
- *
- * Look at src/js and concatenate those files, send them to assets/js where we then minimize the concatenated file.
-*/
-gulp.task('scriptsJs', function() {
-	return 	gulp.src([	// manually add all scripts in here so as to be able to control the order
-				'./assets/js/custom/single-page-updown.js', 
-				'./assets/js/custom/slideshow.js',
-				'./assets/js/custom/social-media.js',
-				'./assets/js/custom/forms.js',
-				'./assets/js/custom/scripts.js',
-			])
-				.pipe(concat('bjzm-scripts.js'))
-				.pipe(babel({ presets: ['es2015'] }))
-				.pipe(gulp.dest('./assets/js'))
-				.pipe(rename( {
-					basename: "bjzm-scripts",
-					suffix: '.min'
-				}))
-				.pipe(uglify())
-				.pipe(gulp.dest('./assets/js/'))
-				.pipe(notify({ message: 'Custom scripts task complete', onLast: true }));
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -400,7 +351,7 @@ gulp.task('buildImages', function() {
 
 
  // Watch Task
- gulp.task('default', ['styles', 'vendorsJs', 'bundle', 'images'], function () {
- 	gulp.watch('./assets/js/**/*.js', ['bundle']);
- 	gulp.watch('./assets/css/**/*.scss', ['styles']);
+ gulp.task('default', ['styles', 'bundle', 'images'], function () {
+ 	gulp.watch('./assets/src/js/**/*.js', ['bundle']);
+ 	gulp.watch('./assets/src/scss/**/*.scss', ['styles']);
  });

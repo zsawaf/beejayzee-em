@@ -41,7 +41,7 @@
 
 		parseUrlHash : function( url ) {
 			var arr = url.split("#");
-			anchor =  arr[1];
+			var anchor =  arr[1];
 			return anchor;
 		},
 

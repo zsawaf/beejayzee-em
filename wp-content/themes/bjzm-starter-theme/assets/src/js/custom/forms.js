@@ -72,6 +72,10 @@ class Form {
 		});
 	}
 
+	consoleAThing() {
+		 console.log('whooooa');
+	}
+
 	float_labels() {
 		$(document).on("focusin", ".form__field", function(e){
 			$(this).addClass('float--label');
@@ -85,3 +89,6 @@ class Form {
 		});
 	}
 }
+
+
+module.exports = Form;
