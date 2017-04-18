@@ -15,6 +15,7 @@ Text Domain: bjzm
  * 3rd Party
  * ------------------------------------------------------------------------- */
 //@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendor/slick";
 
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
@@ -41,7 +42,7 @@ Text Domain: bjzm
 
 @import "partials/main-header";	/* matt */
 @import "partials/navigation";	/* matt */
-@import "partials/card";	/* matt */
+@import "partials/card";	/* zafer */
 @import "partials/hero";	/* zafer */
 @import "partials/slider";	/* zafer */
 @import "partials/button";		/* matt */
