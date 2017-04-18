@@ -27,7 +27,6 @@ function my_secondary_menu_classes( $classes, $item, $args ) {
 	return $classes;
 
 }
-// add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 10, 3 ); 
 add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 	10, 3 ); 
 
 

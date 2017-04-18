@@ -22,7 +22,9 @@
 
 					<div class="l-column l-column-left">
 						<div class="header-main__site-logo">
-							<img src="<?php echo get_template_directory_uri() ?>/assets/img/site-logo.png" alt="" class="header-main__site-logo-img">
+							<a href="<?php echo get_site_url() ?>">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/img/site-logo.png" alt="" class="header-main__site-logo-img">
+							</a>
 						</div>
 					</div>
 

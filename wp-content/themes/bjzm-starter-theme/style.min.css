@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bjzm
 */@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700");*,*:after,*:before{box-sizing:border-box;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility}
-html{height:100%;min-height:100%}body{font-size:16px;margin:0;background:#fff;height:100%;min-height:100%}
+html{height:100%;min-height:100%}body{font-size:16px;margin:0;background:#fbfcfc;height:100%;min-height:100%}
 html,body{font-family:'Roboto',sans-serif}.clear:before,.clear:after{content:' ';display:table}
 .clear:after{clear:both}.clear{*zoom:1}.container{height:100%}img{width:100%;max-width:none;height:auto}
 h1,h2,h3,h4,h5,h6,p,ul,li,ol{margin:0;padding:0}li{list-style:none}p{font-size:1em}
