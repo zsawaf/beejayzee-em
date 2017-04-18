@@ -10,7 +10,8 @@ function bjzm_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Main Menu', 'neat' ),
+		'primary' => esc_html__( 'Main Menu', 'bjzm' ),
+		'social' => esc_html__( 'Social Menu', 'bjzm' ),
 	) );
 
 	add_theme_support( 'html5', array(

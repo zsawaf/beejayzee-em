@@ -14,6 +14,9 @@ $footer-main-height: 120px;
 	}
 	.l-column {
 		width: 33.3333%;
+		&:last-child {
+			text-align: right;
+		}
 	}
 }
 

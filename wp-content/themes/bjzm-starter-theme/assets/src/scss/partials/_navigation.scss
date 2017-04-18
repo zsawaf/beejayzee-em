@@ -1,9 +1,11 @@
 .navigation {
 	@include flexVerticalCenter;
 }
+
 .navigation__menu {
 	
 }
+
 .navigation__item {
 	list-style-type: none;
 	padding: 2px 22px;
@@ -22,3 +24,38 @@
 		}
 	}
 }
+
+
+
+.navigation--social {
+	.navigation__item {
+		background-color: red;
+		a:link, a:visited {
+			height: 20px;
+			width: 22px;
+			display: block;
+			text-indent: -9999px;
+			position: relative;
+			overflow: hidden;
+			color: #fff;
+			&:before {
+				// content: "\f09a";
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
