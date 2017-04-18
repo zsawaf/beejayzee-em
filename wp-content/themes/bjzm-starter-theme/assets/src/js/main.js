@@ -3,7 +3,7 @@ import $ from 'jquery';
 /**
  * Custom Scripts
  */
-import updown from './custom/single-page-updown';
+import singleUpDown from './custom/single-page-updown';
 import Form from './custom/forms';
 import BzjmSocialFeed from './custom/bjzm-social-feeds';
 import BjzmScripts from './custom/bjzm-scripts';
@@ -19,6 +19,8 @@ $(document).ready(function() {
 	
 
 	var MyForm = new Form;
+
+	$(".navigation__menu").singleUpDown();
 
 	new BjzmScripts;
 
