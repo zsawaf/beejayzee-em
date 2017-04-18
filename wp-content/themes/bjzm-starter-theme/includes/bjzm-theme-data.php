@@ -85,3 +85,5 @@ function create_travel_category_taxonomy() {
 
 }
 add_action( 'init', 'create_travel_category_taxonomy', 0 );
+
+

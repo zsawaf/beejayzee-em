@@ -48,7 +48,6 @@ var project 		= 'neat', // Project name, used for build zip.
 		minifycss    = require('gulp-uglifycss'),
 		filter       = require('gulp-filter'),
 		uglify       = require('gulp-uglify'),
-		imagemin     = require('gulp-imagemin'),
 		newer        = require('gulp-newer'),
 		rename       = require('gulp-rename'),
 		concat       = require('gulp-concat'),
@@ -231,24 +230,6 @@ gulp.task('scriptsJs', function() {
 				.pipe(notify({ message: 'Custom scripts task complete', onLast: true }));
 });
 
-
-/**
- * Images
- *
- * Look at src/images, optimize the images and send them to the appropriate place
-*/
-gulp.task('images', function() {
-
-// Add the newer pipe to pass through newer images only
-	return 	gulp.src(['./assets/img/raw/**/*.{png,jpg,gif}'])
-				.pipe(newer('./assets/img/'))
-				.pipe(rimraf({ force: true }))
-				.pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
-				.pipe(gulp.dest('./assets/img/'))
-				.pipe( notify( { message: 'Images task complete', onLast: true } ) );
-});
-
-
 /**
  * Clean gulp cache
  */
@@ -290,18 +271,6 @@ gulp.task('images', function() {
  		 		.pipe(notify({ message: 'Copy from buildFiles complete', onLast: true }));
   });
 
-
-/**
-* Images
-*
-* Look at src/images, optimize the images and send them to the appropriate place
-*/
-gulp.task('buildImages', function() {
-	return 	gulp.src(['assets/img/**/*', '!assets/images/raw/**'])
-		 		.pipe(gulp.dest(build+'assets/img/'))
-		 		.pipe(plugins.notify({ message: 'Images copied to buildTheme folder', onLast: true }));
-});
-
  /**
   * Zipping build directory for distribution
   *
@@ -331,7 +300,7 @@ gulp.task('buildImages', function() {
 
 
  // Watch Task
- gulp.task('default', ['styles', 'vendorsJs', 'scriptsJs', 'images'], function () {
+ gulp.task('default', ['styles', 'vendorsJs', 'scriptsJs'], function () {
  	gulp.watch('./assets/js/**/*.js', ['scriptsJs']);
  	gulp.watch('./assets/css/**/*.scss', ['styles']);
  });

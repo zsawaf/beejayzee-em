@@ -62,6 +62,10 @@ if (file_exists(dirname(__FILE__).'/includes/theme-settings.php')) {
     require_once( dirname(__FILE__).'/includes/theme-settings.php' );
 }
 
+if (file_exists(dirname(__FILE__).'/includes/bjzm-theme-options.php')) {
+    require_once( dirname(__FILE__).'/includes/bjzm-theme-options.php' );
+}
+
 if (file_exists(dirname(__FILE__).'/includes/forms.php')) {
     require_once( dirname(__FILE__).'/includes/forms.php' );
 }
