@@ -20,8 +20,6 @@ $(document).ready(function() {
 
 	var MyForm = new Form;
 
-	$(".navigation__menu").singleUpDown();
-
 	new BjzmScripts;
 
 	$(".slider").slick();
