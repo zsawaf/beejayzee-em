@@ -16,11 +16,23 @@
 
 <body <?php body_class(); ?>>
 	<header class="header header-main">
-		<div class="main-header-inner">
-			<div class="container">
-				<nav class="header__navigation navigation">
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu' ) ); ?>
-				</nav>
+		<div class="l-main-header-inner">
+			<div class="container l-container">
+				<div class="l-row">
+
+					<div class="l-column l-column-left">
+						<div class="header-main__site-logo">
+							<img src="<?php echo get_template_directory_uri() ?>/assets/img/site-logo.png" alt="" class="header-main__site-logo-img">
+						</div>
+					</div>
+
+					<div class="l-column l-column-right">
+						<nav class="header-main__navigation navigation">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu' ) ); ?>
+						</nav>
+					</div>
+
+				</div>
 			</div>
 		</div>
 	</header>

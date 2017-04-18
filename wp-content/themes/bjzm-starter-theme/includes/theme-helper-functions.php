@@ -21,6 +21,20 @@ function srcset($full_width, $tablet_width, $mobile_width) {
 }
 
 
+function my_secondary_menu_classes( $classes, $item, $args ) {
+
+	$classes[] = 'navigation__item';
+	return $classes;
+
+}
+// add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 10, 3 ); 
+add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 	10, 3 ); 
+
+
+
+
+
+
 
 
 
