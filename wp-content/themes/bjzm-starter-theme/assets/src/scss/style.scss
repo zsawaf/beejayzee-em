@@ -22,30 +22,40 @@ Text Domain: bjzm
 @import "partials/variables";
 @import "partials/mixins";
 
+
+/* ----------------------------------------------------------------------------
+ * Common & Structure
+ * ------------------------------------------------------------------------- */
 @import "partials/structure";
-
-
-
-// Pages
-@import "partials/home";
-@import "partials/blog";
-
-//Components
 @import "partials/fonts";
 @import "partials/container";
 @import "partials/common";
-@import "partials/main-header";
-@import "partials/socialmedia";
 @import "partials/columns";
-@import "partials/slideshow";
-@import "partials/form";
+@import "partials/socialmedia";
+
+
 
 /* ----------------------------------------------------------------------------
- * Normalize & Santize
+ * Components
  * ------------------------------------------------------------------------- */
-@import "vendor/normalize";
-@import "vendor/sanitize";
+
+@import "partials/main-header";	/* matt */
+@import "partials/navigation";	/* matt */
+@import "partials/card";	/* matt */
+@import "partials/hero";	/* zafer */
+@import "partials/slider";	/* zafer */
+@import "partials/button";		/* matt */
+@import "partials/gallery";		/* zafer */
+@import "partials/form";	/* zafer */
+
+/* ----------------------------------------------------------------------------
+ * Pages
+ * ------------------------------------------------------------------------- */
+@import "partials/home";
+@import "partials/blog";
 
 
-/* WPCore */
-@import "partials/wpcore";
+
+
+
+

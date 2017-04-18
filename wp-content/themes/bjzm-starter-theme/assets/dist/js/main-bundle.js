@@ -501,13 +501,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 (0, _jquery2.default)(document).ready(function () {
 
-	var MyForm = new _forms2.default();
+  var MyForm = new _forms2.default();
 
-	(0, _jquery2.default)(".navigation__menu").singleUpDown();
+  new _bjzmScripts2.default();
 
-	new _bjzmScripts2.default();
-
-	(0, _jquery2.default)(".slider").slick();
+  (0, _jquery2.default)(".slider").slick();
 });
 
 },{"./custom/bjzm-scripts":1,"./custom/bjzm-social-feeds":2,"./custom/forms":3,"./custom/single-page-updown":4,"./vendors/jquery.matchHeight":6,"./vendors/slider.min":7,"jquery":8}],6:[function(require,module,exports){
