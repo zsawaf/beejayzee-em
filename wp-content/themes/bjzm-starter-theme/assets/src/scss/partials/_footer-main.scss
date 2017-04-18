@@ -1,0 +1,32 @@
+$footer-main-height: 120px;
+
+
+.footer-main {
+	height: $footer-main-height;
+	background-color: $cloud-grey;
+	.l-footer-main-inner {
+		height: $footer-main-height;
+		padding: 30px 0;
+	}
+	.l-row {
+		display: flex;
+		justify-content: space-between;
+	}
+	.l-column {
+		width: 33.3333%;
+	}
+}
+
+.footer-main__privacy-policy {
+	&:link, &:visited {
+		color: $light-grey;
+		text-decoration: none;
+		transition: color 0.2s ease;
+		font-size: 0.85;
+		font-weight: 100;
+	}
+	&:hover, &:active {
+		text-transform: none;
+		color: darken($light-grey, 10%);
+	}
+}
