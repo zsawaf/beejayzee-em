@@ -30,8 +30,11 @@ function my_secondary_menu_classes( $classes, $item, $args ) {
 add_filter( 'nav_menu_css_class', 'my_secondary_menu_classes', 	10, 3 ); 
 
 
-
-
+function bjzm_get_post_category() {
+	$cats = get_the_category();
+	lt($cats);
+	return $cats[0]->name;
+}
 
 
 

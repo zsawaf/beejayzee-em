@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" class="blog-post card count-<?php echo $key ?> post-<?php the_ID(); ?> col-md-4">
 	
 	<div class="blog-post-inner">
-	
+
 		<a href="<?php echo get_permalink(); ?>" class="">
 
 			<div class="card-image-wrapper">
@@ -17,6 +17,7 @@
 			</div>
 
 			<header class="entry-header">
+				<p class="entry-category"><?php echo bjzm_get_post_category() ?></p>
 				<h2><?php echo get_the_title(); ?></h2>
 			</header>
 
