@@ -22,7 +22,7 @@ var BjzmScripts = function () {
 	_createClass(BjzmScripts, [{
 		key: 'startMatchHeight',
 		value: function startMatchHeight() {
-			(0, _jquery2.default)('.some-section').matchHeight({
+			(0, _jquery2.default)('.bjzm-match-height').matchHeight({
 				byRow: false
 			});
 		}

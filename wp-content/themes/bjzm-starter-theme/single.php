@@ -7,19 +7,19 @@
 
 get_header(); ?>
 
-	<div class="bjzm">
+	<div class="bjzm-main-wrapper l-bjzm-main-wrapper">
+		<div class="l-bjzm-main-wrapper-inner">
+			<div class="container">
+				<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part( 'views/content', 'single' ); ?>
+					
+					<?php get_template_part( 'views/post-navigation') ?>
 
-			<?php get_template_part( 'views/content', 'single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
-		<?php endwhile; // end of the loop. ?>
-
-
+				<?php endwhile; // end of the loop. ?>
+			</div>
+		</div>
 	</div>
-	<!-- /.aa_single -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
