@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="blog-post card count-<?php echo $key ?> post-<?php the_ID(); ?>">
+<article id="post-<?php the_ID(); ?>" class="blog-post card count-<?php echo $key ?> post-<?php the_ID(); ?> content-single">
 	
 	<div class="blog-post-inner">
 

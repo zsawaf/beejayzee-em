@@ -2,13 +2,15 @@
 .post-header {}
 .post-header__category {
 	color: $carrot;
+	margin: 10px 0 0 0;
 }
 .post-header__title {
 	font-size: 2.8em;
-	margin: 10px 0 7px;
+	margin: 10px 0 5px;
 }
 .post-header__excerpt {
 	font-size: 1.1em;
+	margin: 0 0 10px;
 }
 
 
