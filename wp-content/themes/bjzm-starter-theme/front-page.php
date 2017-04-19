@@ -1,25 +1,19 @@
 <?php get_header(); ?>
 
-	<div class="bjzm">
+<div class="bjzm-main-container">
+	
+	<div class="blog-post-wrapper container">
+		<div class="row">
+			<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
-		<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-			
-			
-				<?php if( is_home() ):  ?>
-				
-					<?php get_template_part( 'views/content-post' ); ?>
-				
-				<?php else: ?>
-
-					<?php get_template_part( 'views/content-home' ); ?>
-
-				<?php endif; ?>
-				
+				<?php get_template_part( 'views/content-card' ); ?>
 			
 			<?php endwhile; ?>
 
-		<?php endif; ?>
-
+			<?php endif; ?>
+		</div>
 	</div>
+
+</div>
 
 <?php get_footer(); ?>
