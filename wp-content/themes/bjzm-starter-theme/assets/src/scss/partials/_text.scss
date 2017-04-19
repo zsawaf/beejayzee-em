@@ -1,157 +1,155 @@
-.content-single {
-    .gallery {
-        width: calc(100%) + 10px;
-        margin-left: -5px;
-        clear: both;
-        overflow: hidden;
-        margin-bottom: 20px;
-        .gallery-item {
-            position: relative;
-            width: 33.3333333%;
-            float: left;
-            margin: 0;
-            .gallery-icon {
-                padding: 5px;
-            }
-        }
-        &.gallery-columns-2 .gallery-item {
-            width: 50%;
-        }
-        &.gallery-columns-3 .gallery-item {
-            width: 33.3333333%;
-        }
-        &.gallery-columns-4 .gallery-item {
-            width: 25%;
-        }
-        &.gallery-columns-5 .gallery-item {
-            width: 16.66666666%;
-        }
-    }
-    a {
-        &:link,
-        &:visited {}
-        &:hover,
-        &:active {}
-    }
-    img {}
-    img.size-large {
-        width: 100%;
-    }
-    p {
-        margin-bottom: 25px;
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-        margin-bottom: 8px;
-    }
-    h4 {
-        text-transform: uppercase;
-        line-height: 0.9;
-        font-size: 18px;
-    }
-    h5 {
-        margin-bottom: 25px;
-    }
-    ul {
-        li {
-            list-style-type: none;
-            &:before {
-                content: '\2022';
-                padding-right: 0.5em;
-                line-height: 0.8;
-            }
-        }
-    }
-    ul,
-    ol {
-        margin-bottom: 25px;
-        padding-left: 25px;
-        li {
-            padding-bottom: 5px;
-        }
-    }
-    ol,
-    ol li {
-        list-style-type: decimal;
-    }
-    .wp-caption {
-        padding: 0;
-    }
-    .wp-caption-text {
-        font-size: 14px;
-        line-height: 1.0;
-        margin: 0;
-        text-align: left;
-        padding: 4px 12px 2px;
-        color: #2b2b2b;
-        position: absolute;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.84);
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin-left: 5px;
-        margin-right: 5px;
-        bottom: 5px;
-        letter-spacing: 0.04em;
-    }
-    .aligncenter,
-    div.aligncenter {
-        display: block;
-        margin: 5px auto 5px auto;
-    }
-    .alignright {
-        float: right;
-        margin: 5px 0 20px 20px;
-    }
-    .alignleft {
-        float: left;
-        margin: 5px 20px 20px 0;
-    }
-    a img.alignright {
-        float: right;
-        margin: 5px 0 20px 20px;
-    }
-    a img.alignnone {
-        margin: 5px 20px 20px 0;
-    }
-    a img.alignleft {
-        float: left;
-        margin: 5px 20px 20px 0;
-    }
-    a img.aligncenter {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-	.gallery {
-		width: calc(100%) + 10px;
-		margin-left: -5px;
-		clear: both;
-		overflow: hidden;
-		margin-bottom: 20px;
-		.gallery-item {
-			position: relative;
-			width: 33.3333333%;
-			float: left;
-			margin: 0;
-			.gallery-icon {
-				padding: 5px;
-			}
+  .gallery {
+      width: calc(100%) + 10px;
+      margin-left: -5px;
+      clear: both;
+      overflow: hidden;
+      margin-bottom: 20px;
+      .gallery-item {
+          position: relative;
+          width: 33.3333333%;
+          float: left;
+          margin: 0;
+          .gallery-icon {
+              padding: 5px;
+          }
+      }
+      &.gallery-columns-2 .gallery-item {
+          width: 50%;
+      }
+      &.gallery-columns-3 .gallery-item {
+          width: 33.3333333%;
+      }
+      &.gallery-columns-4 .gallery-item {
+          width: 25%;
+      }
+      &.gallery-columns-5 .gallery-item {
+          width: 16.66666666%;
+      }
+  }
+  a {
+      &:link,
+      &:visited {}
+      &:hover,
+      &:active {}
+  }
+  img {}
+  img.size-large {
+      width: 100%;
+  }
+  p {
+      margin-bottom: 25px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+      margin-bottom: 8px;
+  }
+  h4 {
+      text-transform: uppercase;
+      line-height: 0.9;
+      font-size: 18px;
+  }
+  h5 {
+      margin-bottom: 25px;
+  }
+  ul {
+      li {
+          list-style-type: none;
+          &:before {
+              content: '\2022';
+              padding-right: 0.5em;
+              line-height: 0.8;
+          }
+      }
+  }
+  ul,
+  ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+      li {
+          padding-bottom: 5px;
+      }
+  }
+  ol,
+  ol li {
+      list-style-type: decimal;
+  }
+  .wp-caption {
+      padding: 0;
+  }
+  .wp-caption-text {
+      font-size: 14px;
+      line-height: 1.0;
+      margin: 0;
+      text-align: left;
+      padding: 4px 12px 2px;
+      color: #2b2b2b;
+      position: absolute;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.84);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-left: 5px;
+      margin-right: 5px;
+      bottom: 5px;
+      letter-spacing: 0.04em;
+  }
+  .aligncenter,
+  div.aligncenter {
+      display: block;
+      margin: 5px auto 5px auto;
+  }
+  .alignright {
+      float: right;
+      margin: 5px 0 20px 20px;
+  }
+  .alignleft {
+      float: left;
+      margin: 5px 20px 20px 0;
+  }
+  a img.alignright {
+      float: right;
+      margin: 5px 0 20px 20px;
+  }
+  a img.alignnone {
+      margin: 5px 20px 20px 0;
+  }
+  a img.alignleft {
+      float: left;
+      margin: 5px 20px 20px 0;
+  }
+  a img.aligncenter {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+.gallery {
+	width: calc(100%) + 10px;
+	margin-left: -5px;
+	clear: both;
+	overflow: hidden;
+	margin-bottom: 20px;
+	.gallery-item {
+		position: relative;
+		width: 33.3333333%;
+		float: left;
+		margin: 0;
+		.gallery-icon {
+			padding: 5px;
 		}
-		&.gallery-columns-2 .gallery-item {
-			width: 50%;
-		}
-		&.gallery-columns-3 .gallery-item {
-			width: 33.3333333%;
-		}
-		&.gallery-columns-4 .gallery-item {
-			width: 25%;
-		}
-		&.gallery-columns-5 .gallery-item {
-			width: 16.66666666%;
-		}
+	}
+	&.gallery-columns-2 .gallery-item {
+		width: 50%;
+	}
+	&.gallery-columns-3 .gallery-item {
+		width: 33.3333333%;
+	}
+	&.gallery-columns-4 .gallery-item {
+		width: 25%;
+	}
+	&.gallery-columns-5 .gallery-item {
+		width: 16.66666666%;
 	}
 }
