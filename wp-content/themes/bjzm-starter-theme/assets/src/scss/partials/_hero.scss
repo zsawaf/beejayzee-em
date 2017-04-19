@@ -1,0 +1,22 @@
+.hero {
+	position: relative;
+}
+
+.hero__image {
+	object-fit: cover;
+	object-position: center;
+}
+.hero__title {
+	h1 {
+		text-transform: uppercase;
+	}
+}
+.hero__subtitle {
+	h2 {
+		text-transform: uppercase;
+	}
+}
+
+.l-hero-wrapper {
+	@include center();
+}
