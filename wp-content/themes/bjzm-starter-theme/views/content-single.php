@@ -14,7 +14,7 @@
 						</picture>
 					<?php endif; ?>
 					</div>
-				</div>	
+				</div>
 
 			</div>
 
@@ -27,11 +27,7 @@
 			<div class="entry-content">
 	
 				<div class="content-overlay">
-					<p><?php echo get_the_content(); ?></p>
-				</div>
-
-				<div class="read-more">
-					<span class="read-more-link">Read More</span>
+					<?php echo apply_filters('the_content', get_the_content()) ?>
 				</div>
 
 			</div>

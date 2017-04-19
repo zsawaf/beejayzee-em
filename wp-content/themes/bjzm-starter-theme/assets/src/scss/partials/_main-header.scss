@@ -1,5 +1,10 @@
-
-
+body {
+	&.logged-in.admin-bar {
+		.header-main {
+			top: 32px;	
+		}
+	}
+}
 .header-main {
 	height: $header-main-height;
 	border-bottom: solid thin $light-border-colour;

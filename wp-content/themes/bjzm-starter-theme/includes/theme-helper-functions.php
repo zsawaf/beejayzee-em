@@ -44,6 +44,10 @@ function bjzm_add_thumbnail_sizes() {
 	add_image_size( 'full-width-content', 1170, 850, true );
 	add_image_size( 'hero-image', 1920, 1100, true );
 
+	/*post galleries*/
+	add_image_size( 'gallery-thumbnail', 720, 497, true );	
+	add_image_size( 'gallery-thumbnail-tall', 720, 600, true );	
+
 	/*single featured images*/
 	add_image_size( 'single-featured-image', 1170, 700, true );
 	add_image_size( 'single-featured-image-tablet', 768, 500, true );
@@ -62,11 +66,16 @@ function wpshout_custom_sizes( $sizes ) {
 		'full-width' => __( 'Full Width' ),
 		'full-width-content' => __( 'Full Width Content' ),
 		'hero-image' => __( 'Hero Image' ),
+		'gallery-thumbnail' => __( 'Gallery Thumbnail' ),
+		'gallery-thumbnail-tall' => __( 'Gallery Thumbnail Tall' ),
 	) );
 }
 add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
 
-
+function filter_ptags_on_images($content) {
+	return preg_replace('/<p\b[^>]*>(\s*)(<img .* \/>)(\s*)<\/p>/iU', '\2', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images', 10);
 
 
 
