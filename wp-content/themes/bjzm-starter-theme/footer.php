@@ -11,7 +11,7 @@
 				</div>
 				<div class="l-column l-column-right">
 					<nav class="footer-main__navigation navigation navigation--social">
-						<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_id' => 'social-menu', 'menu_class' => 'navigation__menu' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_id' => 'social-menu', 'menu_class' => 'navigation__menu navigation__menu--align-right' ) ); ?>
 					</nav>
 				</div>
 			</div>

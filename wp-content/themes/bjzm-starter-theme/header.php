@@ -29,7 +29,7 @@
 
 					<div class="l-column l-column-right">
 						<nav class="header-main__navigation navigation">
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu' ) ); ?>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu navigation__menu--align-right' ) ); ?>
 						</nav>
 					</div>
 
