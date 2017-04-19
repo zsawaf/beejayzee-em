@@ -1,9 +1,17 @@
-$header-main-height: 80px;
+
 
 .header-main {
 	height: $header-main-height;
 	border-bottom: solid thin $light-border-colour;
 	background-color: $blackish;
+
+	position: fixed;
+	width: 100%;
+	z-index: 500;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
 	.header-main-inner {
 		height: $header-main-height;
 	}
