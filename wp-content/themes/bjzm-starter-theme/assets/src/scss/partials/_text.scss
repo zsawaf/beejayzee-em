@@ -57,7 +57,6 @@
       li {
           list-style-type: none;
           &:before {
-              content: '\2022';
               padding-right: 0.5em;
               line-height: 0.8;
           }

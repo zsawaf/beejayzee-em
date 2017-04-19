@@ -12,7 +12,6 @@
 
 <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 	<header class="header header-main">
 		<div class="l-main-header-inner">

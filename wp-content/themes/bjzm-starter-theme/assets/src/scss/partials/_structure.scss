@@ -25,11 +25,20 @@ body {
     background: $whiteish;
     height:100%;
     min-height:100%;
-    padding-top: calc( 35px + #{$header-main-height} );
 }
 
 html, body {
     font-family: 'Roboto', sans-serif;
+}
+
+.bjzm-main-wrapper {
+    padding-top: calc( 35px + #{$header-main-height} );
+}
+
+.home {
+    .bjzm-main-wrapper {
+        padding-top: calc( 35px + #{$header-main-height} - 40px );
+    }
 }
 
 /* clear */

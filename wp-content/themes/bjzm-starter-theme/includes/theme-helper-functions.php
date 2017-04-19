@@ -42,7 +42,11 @@ function bjzm_add_thumbnail_sizes() {
 	/*post/page content*/
 	add_image_size( 'full-width', 1920, 1100, false );
 	add_image_size( 'full-width-content', 1170, 850, true );
-	add_image_size( 'hero-image', 1920, 1100, true );
+	
+	/*hero*/
+	add_image_size( 'hero-image', 1920, 840, true );
+	add_image_size( 'hero-image-tablet', 991, 500, true );
+	add_image_size( 'hero-image-mobile', 480, 242, true );
 
 	/*post galleries*/
 	add_image_size( 'gallery-thumbnail', 720, 497, true );	
@@ -62,6 +66,7 @@ bjzm_add_thumbnail_sizes();
 
 
 function wpshout_custom_sizes( $sizes ) {
+
 	return array_merge( $sizes, array(
 		'full-width' => __( 'Full Width' ),
 		'full-width-content' => __( 'Full Width Content' ),
@@ -69,6 +74,7 @@ function wpshout_custom_sizes( $sizes ) {
 		'gallery-thumbnail' => __( 'Gallery Thumbnail' ),
 		'gallery-thumbnail-tall' => __( 'Gallery Thumbnail Tall' ),
 	) );
+
 }
 add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
 

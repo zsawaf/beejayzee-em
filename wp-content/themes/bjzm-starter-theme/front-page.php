@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 <div class="bjzm-main-wrapper l-bjzm-main-wrapper">
+	
+	<?php get_template_part( 'views/slideshow' ) ?>
+
 	<div class="l-bjzm-main-wrapper-inner">
 
 		<div class="blog-post-wrapper container">

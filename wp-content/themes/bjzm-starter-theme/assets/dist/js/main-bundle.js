@@ -614,12 +614,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   new _bjzmScripts2.default();
 
-  var slider = new _bjzmSlideshow2.default("slider", {
-    dots: true,
-    customPaging: function customPaging(slider, i) {
-      return '<a href="#" class="slider__dots"></a>';
-    }
-  });
+  (0, _jquery2.default)(".bjzm-slider__list").slick();
+
+  /*var slider = new Slider("home-slider", {
+  	dots: true,
+  	customPaging : function(slider, i) {
+  			return '<a href="#" class="slider__dots"></a>';
+  		}
+  	});
+  */
 });
 
 /**
