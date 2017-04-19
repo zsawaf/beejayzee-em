@@ -9,9 +9,8 @@
 						<?php if( has_post_thumbnail() ) : ?>
 						<a href="<?php the_permalink(); ?>">
 							<picture>
-								<source srcset="<?php echo get_the_post_thumbnail('single-featured-image-mobile') ?>"  media="(max-width: 480px)">
-								<source srcset="<?php echo get_the_post_thumbnail('single-featured-image-tablet') ?>"  media="(max-width: 768px)">
-								<img class="slider-img" src="<?php echo get_the_post_thumbnail('single-featured-image') ?>" alt="">
+								<source srcset="<?php echo get_the_post_thumbnail_url( null, 'single-featured-image-mobile') ?>"  media="(max-width: 480px)">
+								<img class="slider-img" src="<?php echo get_the_post_thumbnail_url( null, 'card-featured-image') ?>" alt="">
 							</picture>
 						</a>
 						<?php endif; ?>

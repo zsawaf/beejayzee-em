@@ -167,7 +167,17 @@ html,body{font-family:'Roboto',sans-serif}.clear:before,.clear:after{content:' '
 .clear:after{clear:both}.clear{*zoom:1}.container{height:100%}img{width:100%;max-width:none;height:auto}
 h1,h2,h3,h4,h5,h6,p,ul,li,ol{margin:0;padding:0}li{list-style:none}p{font-size:1em}
 a{font-size:1em;-webkit-transition:all .3s;transition:all .3s}a:link,a:visited,a:active,a:focus{outline:0}
-a:hover{text-decoration:none}input:focus{outline:0}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}
+a:hover{text-decoration:none}input:focus{outline:0}.blog-post .gallery{width:calc(100%)10px;margin-left:-5px;clear:both;overflow:hidden;margin-bottom:20px}
+.blog-post .gallery .gallery-item{position:relative;width:33.3333333%;float:left;margin:0}
+.blog-post .gallery .gallery-item .gallery-icon{padding:5px}.blog-post .gallery.gallery-columns-2 .gallery-item{width:50%}
+.blog-post .gallery.gallery-columns-3 .gallery-item{width:33.3333333%}.blog-post .gallery.gallery-columns-4 .gallery-item{width:25%}
+.blog-post .gallery.gallery-columns-5 .gallery-item{width:16.66666666%}.blog-post img.size-large{width:100%}
+.blog-post p{margin-bottom:25px;text-align:justify}.blog-post h1,.blog-post h2,.blog-post h3,.blog-post h4{margin-bottom:8px}
+.blog-post h4{text-transform:uppercase;line-height:.9;font-size:18px}.blog-post h5{margin-bottom:25px}
+.blog-post ul li{list-style-type:none}.blog-post ul li:before{content:'\2022';padding-right:.5em;font-size:1.3em;line-height:.8}
+.blog-post ul,.blog-post ol{margin-bottom:25px;padding-left:25px}.blog-post ul li,.blog-post ol li{font-size:.85em;padding-bottom:5px}
+.blog-post .wp-caption{padding:0}.blog-post .wp-caption-text{font-size:14px;line-height:1;margin:0;text-align:left;padding:4px 12px 2px;color:#2b2b2b;position:absolute;z-index:10;background:rgba(255,255,255,0.84);bottom:0;left:0;right:0;margin-left:5px;margin-right:5px;bottom:5px;letter-spacing:.04em}
+.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}
 @media(min-width:768px){.container{width:750px}}@media(min-width:992px){.container{width:970px}
 }@media(min-width:1200px){.container{width:1170px}}.columns.columns--float .col-2{float:left;width:calc(100% / 2)}
 .columns.columns--float .col-3{float:left;width:calc(100% / 3)}.columns.columns--float .col-4{float:left;width:calc(100% / 4)}
