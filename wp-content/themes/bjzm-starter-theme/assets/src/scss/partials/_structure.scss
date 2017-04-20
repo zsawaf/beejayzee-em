@@ -22,9 +22,23 @@ html {
 body {
     font-size: 16px;
     margin: 0;
-    background: #fff;
+    background: $whiteish;
     height:100%;
     min-height:100%;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bjzm-main-wrapper {
+    padding-top: calc( 35px + #{$header-main-height} );
+}
+
+.home {
+    .bjzm-main-wrapper {
+        padding-top: calc( 35px + #{$header-main-height} - 40px );
+    }
 }
 
 /* clear */
@@ -48,8 +62,7 @@ body {
 }
 
 img {
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
     height: auto;
 }
 

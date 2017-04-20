@@ -19,11 +19,14 @@ $(document).ready(function() {
 
 	new BjzmScripts;
 
-	var slider = new Slider("slider", {
+
+	$(".bjzm-slider__list").slick();
+
+	/*var slider = new Slider("home-slider", {
 		dots: true,
 		customPaging : function(slider, i) {
  			return '<a href="#" class="slider__dots"></a>';
  		}
  	});
-
+*/
 });

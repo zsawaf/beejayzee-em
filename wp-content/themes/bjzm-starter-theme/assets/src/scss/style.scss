@@ -14,7 +14,8 @@ Text Domain: bjzm
 /* ----------------------------------------------------------------------------
  * 3rd Party
  * ------------------------------------------------------------------------- */
-//@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendor/bootstrap/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 @import "vendor/slick";
 
 /* ----------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Text Domain: bjzm
  * ------------------------------------------------------------------------- */
 @import "partials/structure";
 @import "partials/fonts";
+@import "partials/text";
 @import "partials/container";
 @import "partials/common";
 @import "partials/columns";
@@ -42,9 +44,12 @@ Text Domain: bjzm
 
 @import "partials/main-header";	/* matt */
 @import "partials/navigation";	/* matt */
-@import "partials/card";	/* zafer */
+@import "partials/card";	/* matt */
+@import "partials/article";	/* matt */
+@import "partials/button";	/* matt */
+@import "partials/footer-main";	/* matt */
 @import "partials/hero";	/* zafer */
-@import "partials/slider";	/* zafer */
+@import "partials/slideshow";	/* zafer */
 @import "partials/button";		/* matt */
 @import "partials/gallery";		/* zafer */
 @import "partials/form";	/* zafer */
