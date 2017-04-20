@@ -19,6 +19,7 @@ function bjzm_scripts()
 		lt($wp_query);
 
 		wp_register_script('main-scripts', get_template_directory_uri() . '/assets/dist/js/main-bundle.js');
+
 			wp_localize_script('main-scripts', ASSETS, array(
 				'assets_url' => get_template_directory_uri().'/assets/img',
 				'ajaxurl' => admin_url('admin-ajax.php'),
@@ -27,6 +28,7 @@ function bjzm_scripts()
 				'current_url' => home_url(add_query_arg(array(),$wp_query->request)),
 				'max_num_pages' => $wp_query->max_num_pages
 			));
+			
 		wp_enqueue_script('main-scripts');
 
 		wp_register_style( 'ie_html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );

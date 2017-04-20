@@ -127,23 +127,26 @@ function get_post_featured_image_url( $post_id, $size = 'thumbnail-size' ) {
 add_action( 'wp_ajax_nopriv_bjzm_next_posts', 'bjzm_next_posts' );
 add_action( 'wp_ajax_bjzm_next_posts', 'bjzm_next_posts' );
 function bjzm_next_posts() {
-    
-    $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
 
-    $query_vars['paged'] = $_POST['page'];
+	$query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
 
-    $posts = new WP_Query( $query_vars );
-    $GLOBALS['wp_query'] = $posts;
+	$query_vars['paged'] = $_POST['page'];
 
-    if( ! $posts->have_posts() ) { 
-        echo json_encode(false);
-    }
-    else {
-        while ( $posts->have_posts() ) { 
-            $posts->the_post();
-            get_template_part( 'views/content-card' );
-        }
-    }
+	$posts = new WP_Query( $query_vars );
+	$GLOBALS['wp_query'] = $posts;
 
-    die();
+	if( ! $posts->have_posts() ) { 
+		echo json_encode(false);
+	}
+	else {
+		while ( $posts->have_posts() ) { 
+			$posts->the_post();
+			get_template_part( 'views/content-card' );
+		}
+	}
+
+	die();
 }
+
+
+

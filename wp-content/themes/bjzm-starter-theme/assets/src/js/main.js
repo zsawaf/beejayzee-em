@@ -28,8 +28,6 @@ $(document).ready(function() {
 		post_loop: $(".home-posts-loop")
 	});
 
-	LoadMorePosts.init();
-
 	var slider = new Slider("home_slider", {
 		dots: true,
 		customPaging : function(slider, i) {

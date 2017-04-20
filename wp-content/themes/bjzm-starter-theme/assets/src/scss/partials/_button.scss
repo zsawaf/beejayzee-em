@@ -6,4 +6,14 @@
 	font-family: inherit;
 	color: inherit;
 	display: inline-block;
+	&--flat {
+		border: none;
+		background-color: $carrot;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 10px 22px;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 }

@@ -30,12 +30,7 @@ var BjzmLoadMorePosts = function () {
 	_createClass(BjzmLoadMorePosts, [{
 		key: 'setButton',
 		value: function setButton() {
-			this.loadMoreSection = (0, _jquery2.default)('<div class="bjzm-load-more"> <a href="#" class="load-more__button button bjzm-load-more__button">Load More Posts</a>  </div> ');
-		}
-	}, {
-		key: 'init',
-		value: function init() {
-			// console.log(this.query_vars);
+			this.loadMoreSection = (0, _jquery2.default)('<div class="bjzm-load-more"> <a href="#" class="load-more__button button bjzm-load-more__button button--flat">Load More Posts</a>  </div> ');
 		}
 	}, {
 		key: 'addButton',
@@ -50,12 +45,14 @@ var BjzmLoadMorePosts = function () {
 			(0, _jquery2.default)(document).on('click', '.bjzm-load-more a', function (e) {
 				e.preventDefault();
 				_this.page++;
-				_this.doAjax();
+				var $button = (0, _jquery2.default)(e.currentTarget);
+				$button.html('Loading...');
+				_this.doAjax($button);
 			});
 		}
 	}, {
 		key: 'doAjax',
-		value: function doAjax() {
+		value: function doAjax($button) {
 			var _this2 = this;
 
 			_jquery2.default.ajax({
@@ -67,20 +64,23 @@ var BjzmLoadMorePosts = function () {
 					page: this.page
 				},
 				success: function success(response) {
-					_this2.loadMoreSection.remove();
-					if (_this2.page <= _this2.max_num_pages) {
-						_this2.setHtml(response);
-						var newLoadMoreSection = _this2.loadMoreSection.clone();
-
-						_this2.post_loop.append(_this2.loadMoreSection);
-					}
+					_this2.handleResponse(response);
+					$button.html('Load More Posts');
 				}
 			});
 		}
 	}, {
-		key: 'setHtml',
-		value: function setHtml(html) {
-			this.post_loop.append(html);
+		key: 'handleResponse',
+		value: function handleResponse(html) {
+
+			this.loadMoreSection.remove();
+
+			if (this.page <= this.max_num_pages) {
+
+				this.post_loop.append(html);
+				var newLoadMoreSection = this.loadMoreSection.clone();
+				this.post_loop.append(this.loadMoreSection);
+			}
 		}
 	}]);
 
@@ -711,8 +711,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		max_num_pages: ASSETS.max_num_pages,
 		post_loop: (0, _jquery2.default)(".home-posts-loop")
 	});
-
-	LoadMorePosts.init();
 
 	var slider = new _bjzmSlideshow2.default("home_slider", {
 		dots: true,
