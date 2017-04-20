@@ -6,8 +6,10 @@ class BjzmLoadMorePosts {
 		this.query_vars = JSON.parse(args.query_vars);
 		this.post_loop = args.post_loop;
 		this.ajax_url = args.ajax_url;
+		this.max_num_pages = args.max_num_pages;
 		
 		this.page = ( this.query_vars.paged < 1 ) ? 1 : this.query_vars.paged;
+
 
 		this.setButton();
 		this.addButton();
@@ -16,7 +18,7 @@ class BjzmLoadMorePosts {
 	}
 
 	setButton() {
-		this.button = $('<a href="#" class="load-more__button button bjzm-load-more-button">Load More Posts</a>');
+		this.loadMoreSection = $('<div class="bjzm-load-more"> <a href="#" class="load-more__button button bjzm-load-more__button">Load More Posts</a>  </div> ');
 	}
 
 	init() {
@@ -24,14 +26,12 @@ class BjzmLoadMorePosts {
 	}
 
 	addButton() {
-		this.post_loop.append(this.button);
+		this.post_loop.append(this.loadMoreSection);
 	}
 
 	clickEvents() {
-		// $(document).on('click', '.bjzm-load-more-button', (e) => {
-		this.button.on('click', (e) => {
+		$(document).on('click', '.bjzm-load-more a', (e) => {
 			e.preventDefault();
-			console.log('click is ' + this.page);
 			this.page ++;
 			this.doAjax();
 		});
@@ -48,15 +48,19 @@ class BjzmLoadMorePosts {
 				page: this.page
 			},
 			success: (response)  => {
+				this.loadMoreSection.remove();
+				if( this.page <= this.max_num_pages ) {
 				 this.setHtml(response);
-				 this.button.data('page', 'asdf asdf sadf').html('Load to page ' + this.page);
+				 var newLoadMoreSection = this.loadMoreSection.clone();
+				 
+				 	this.post_loop.append(this.loadMoreSection);
+				 }	
 			}
 		});
 
 	}
 
 	setHtml(html) {
-		// var html = JSON.parse(data);
 		this.post_loop.append(html);
 	}
 

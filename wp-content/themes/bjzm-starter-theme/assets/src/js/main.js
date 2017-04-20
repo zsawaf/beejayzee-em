@@ -24,6 +24,7 @@ $(document).ready(function() {
 	var LoadMorePosts = new BjzmLoadMorePosts({
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
+		max_num_pages: ASSETS.max_num_pages,
 		post_loop: $(".home-posts-loop")
 	});
 

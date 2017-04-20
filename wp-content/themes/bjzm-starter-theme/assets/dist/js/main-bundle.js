@@ -18,6 +18,7 @@ var BjzmLoadMorePosts = function () {
 		this.query_vars = JSON.parse(args.query_vars);
 		this.post_loop = args.post_loop;
 		this.ajax_url = args.ajax_url;
+		this.max_num_pages = args.max_num_pages;
 
 		this.page = this.query_vars.paged < 1 ? 1 : this.query_vars.paged;
 
@@ -29,7 +30,7 @@ var BjzmLoadMorePosts = function () {
 	_createClass(BjzmLoadMorePosts, [{
 		key: 'setButton',
 		value: function setButton() {
-			this.button = (0, _jquery2.default)('<a href="#" class="load-more__button button bjzm-load-more-button">Load More Posts</a>');
+			this.loadMoreSection = (0, _jquery2.default)('<div class="bjzm-load-more"> <a href="#" class="load-more__button button bjzm-load-more__button">Load More Posts</a>  </div> ');
 		}
 	}, {
 		key: 'init',
@@ -39,17 +40,15 @@ var BjzmLoadMorePosts = function () {
 	}, {
 		key: 'addButton',
 		value: function addButton() {
-			this.post_loop.append(this.button);
+			this.post_loop.append(this.loadMoreSection);
 		}
 	}, {
 		key: 'clickEvents',
 		value: function clickEvents() {
 			var _this = this;
 
-			// $(document).on('click', '.bjzm-load-more-button', (e) => {
-			this.button.on('click', function (e) {
+			(0, _jquery2.default)(document).on('click', '.bjzm-load-more a', function (e) {
 				e.preventDefault();
-				console.log('click is ' + _this.page);
 				_this.page++;
 				_this.doAjax();
 			});
@@ -68,15 +67,19 @@ var BjzmLoadMorePosts = function () {
 					page: this.page
 				},
 				success: function success(response) {
-					_this2.setHtml(response);
-					_this2.button.data('page', 'asdf asdf sadf').html('Load to page ' + _this2.page);
+					_this2.loadMoreSection.remove();
+					if (_this2.page <= _this2.max_num_pages) {
+						_this2.setHtml(response);
+						var newLoadMoreSection = _this2.loadMoreSection.clone();
+
+						_this2.post_loop.append(_this2.loadMoreSection);
+					}
 				}
 			});
 		}
 	}, {
 		key: 'setHtml',
 		value: function setHtml(html) {
-			// var html = JSON.parse(data);
 			this.post_loop.append(html);
 		}
 	}]);
@@ -705,6 +708,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	var LoadMorePosts = new _bjzmLoadMorePosts2.default({
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
+		max_num_pages: ASSETS.max_num_pages,
 		post_loop: (0, _jquery2.default)(".home-posts-loop")
 	});
 
