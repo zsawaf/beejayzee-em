@@ -54,13 +54,13 @@ if (file_exists(dirname(__FILE__).'/includes/social-media.php')) {
     require_once( dirname(__FILE__).'/includes/social-media.php' );
 }
 
-if (file_exists(dirname(__FILE__).'/includes/theme-helper-functions.php')) {
-    require_once( dirname(__FILE__).'/includes/theme-helper-functions.php' );
-}
-
 
 if (file_exists(dirname(__FILE__).'/includes/theme-settings.php')) {
     require_once( dirname(__FILE__).'/includes/theme-settings.php' );
+}
+
+if (file_exists(dirname(__FILE__).'/includes/bjzm-theme-setup.php')) {
+    require_once( dirname(__FILE__).'/includes/bjzm-theme-setup.php' );
 }
 
 if (file_exists(dirname(__FILE__).'/includes/forms.php')) {

@@ -19,13 +19,13 @@ $(document).ready(function() {
 
 	new BjzmScripts;
 
-	$(".bjzm-slider__list").slick();
+	//$(".bjzm-slider__list").slick();
 
-	/*var slider = new Slider("home-slider", {
+	var slider = new Slider("home_slider", {
 		dots: true,
 		customPaging : function(slider, i) {
  			return '<a href="#" class="slider__dots"></a>';
  		}
  	});
-*/
+
 });

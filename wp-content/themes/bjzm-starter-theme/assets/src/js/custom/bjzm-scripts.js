@@ -3,7 +3,6 @@ import $ from 'jquery';
 class BjzmScripts {
 	
 	constructor() {
-		 console.log('just bjzm scripts');
 		 this.startMatchHeight();
 	}
 

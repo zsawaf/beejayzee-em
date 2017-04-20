@@ -2,7 +2,10 @@
 
 <div class="bjzm-main-wrapper l-bjzm-main-wrapper">
 	
-	<?php get_template_part( 'views/slideshow' ) ?>
+	<?php 
+		do_hero(16);
+		do_slideshow(16, "slider", "home_slider"); 
+	?>
 
 	<div class="l-bjzm-main-wrapper-inner">
 
