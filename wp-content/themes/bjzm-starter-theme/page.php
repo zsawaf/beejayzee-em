@@ -12,24 +12,19 @@
 
 get_header(); ?>
 
-	<div class="aa_wrap">
+	<div class="bjzm-main-wrapper l-bjzm-main-wrapper page">
+		<div class="l-bjzm-main-wrapper-inner">
+			<div class="container">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'views/content', 'page' ); ?>
+					<?php get_template_part( 'views/content', 'page' ); ?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // end of the loop. ?>
-
+				<?php endwhile; // end of the loop. ?>
+				
+			</div>
+		</div>
 	</div>
-	<!-- /.aa_wrap -->
-
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

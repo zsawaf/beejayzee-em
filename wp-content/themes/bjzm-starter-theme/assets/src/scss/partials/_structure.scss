@@ -56,7 +56,6 @@ html, body {
     *zoom: 1;
 }
 
-// container should inherit height of parent
 .container {
     height: 100%;
 }
@@ -66,44 +65,9 @@ img {
     height: auto;
 }
 
-// Remove default margins
-h1, h2, h3, h4, h5, h6, p, ul, li, ol {
-    margin: 0;
-    padding: 0;
-}
 
 li {
     list-style: none;
-}
-
-// set font-sizes + margins
-h1 {
-
-}
-h2 {
-
-}
-h3 {
-
-}
-h4 {
-
-}
-
-p {
-    font-size: 1em;
-}
-
-// normalize
-a {
-    font-size: 1em;
-    transition: all 0.3s;
-    &:link, &:visited, &:active, &:focus {
-        outline: 0;
-    }
-    &:hover {
-        text-decoration: none;
-    }
 }
 
 input:focus {
