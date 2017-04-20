@@ -11,6 +11,41 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var BjzmLoadMorePosts = function () {
+	function BjzmLoadMorePosts(args) {
+		_classCallCheck(this, BjzmLoadMorePosts);
+
+		this.query_vars = JSON.parse(args.query_vars);
+		this.post_loop = args.post_loop;
+		console.log(args.current_url);
+	}
+
+	_createClass(BjzmLoadMorePosts, [{
+		key: 'init',
+		value: function init() {
+			console.log('you called me');
+			console.log(this.query_vars);
+		}
+	}]);
+
+	return BjzmLoadMorePosts;
+}();
+
+module.exports = BjzmLoadMorePosts;
+
+},{"jquery":10}],2:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 var BjzmScripts = function () {
 	function BjzmScripts() {
 		_classCallCheck(this, BjzmScripts);
@@ -33,7 +68,7 @@ var BjzmScripts = function () {
 
 module.exports = BjzmScripts;
 
-},{"jquery":9}],2:[function(require,module,exports){
+},{"jquery":10}],3:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* --------------------------------------------
@@ -159,7 +194,7 @@ var Slider = function () {
 
 module.exports = Slider;
 
-},{"../vendors/slider.min":8,"jquery":9}],3:[function(require,module,exports){
+},{"../vendors/slider.min":9,"jquery":10}],4:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -249,7 +284,7 @@ var SocialMedia = function () {
 
 module.exports = SocialMedia;
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 // class Form {
 // 	constructor() {
 // 		$(".honeypot").hide();
@@ -346,7 +381,7 @@ module.exports = SocialMedia;
 // module.exports = Form;
 "use strict";
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -574,7 +609,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 })(jQuery);
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -601,35 +636,47 @@ var _bjzmSlideshow = require('./custom/bjzm-slideshow.js');
 
 var _bjzmSlideshow2 = _interopRequireDefault(_bjzmSlideshow);
 
+var _bjzmLoadMorePosts = require('./custom/bjzm-load-more-posts');
+
+var _bjzmLoadMorePosts2 = _interopRequireDefault(_bjzmLoadMorePosts);
+
 var _jquery3 = require('./vendors/jquery.matchHeight');
 
 var _jquery4 = _interopRequireDefault(_jquery3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Custom Scripts
- */
 (0, _jquery2.default)(document).ready(function () {
 
-  new _bjzmScripts2.default();
+	new _bjzmScripts2.default();
 
-  (0, _jquery2.default)(".bjzm-slider__list").slick();
+	(0, _jquery2.default)(".bjzm-slider__list").slick();
 
-  /*var slider = new Slider("home-slider", {
-  	dots: true,
-  	customPaging : function(slider, i) {
-  			return '<a href="#" class="slider__dots"></a>';
-  		}
-  	});
-  */
+	var LoadMorePosts = new _bjzmLoadMorePosts2.default({
+		query_vars: ASSETS.query_vars,
+		current_url: ASSETS.current_url
+	});
+	LoadMorePosts.init();
+
+	/*var slider = new Slider("home-slider", {
+ 	dots: true,
+ 	customPaging : function(slider, i) {
+ 			return '<a href="#" class="slider__dots"></a>';
+ 		}
+ 	});
+ */
 });
 
 /**
  * Vendors
  */
 
-},{"./custom/bjzm-scripts":1,"./custom/bjzm-slideshow.js":2,"./custom/bjzm-social-feeds":3,"./custom/forms":4,"./custom/single-page-updown":5,"./vendors/jquery.matchHeight":7,"jquery":9}],7:[function(require,module,exports){
+
+/**
+ * Custom Scripts
+ */
+
+},{"./custom/bjzm-load-more-posts":1,"./custom/bjzm-scripts":2,"./custom/bjzm-slideshow.js":3,"./custom/bjzm-social-feeds":4,"./custom/forms":5,"./custom/single-page-updown":6,"./vendors/jquery.matchHeight":8,"jquery":10}],8:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -1021,7 +1068,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     });
 });
 
-},{"jquery":9}],8:[function(require,module,exports){
+},{"jquery":10}],9:[function(require,module,exports){
 "use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -1450,7 +1497,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   };
 });
 
-},{"jquery":9}],9:[function(require,module,exports){
+},{"jquery":10}],10:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.1.1
  * https://jquery.com/
@@ -11672,6 +11719,6 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[6])
+},{}]},{},[7])
 
 //# sourceMappingURL=maps/main-bundle.js.map

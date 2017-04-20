@@ -9,6 +9,8 @@ import BzjmSocialFeed from './custom/bjzm-social-feeds';
 import BjzmScripts from './custom/bjzm-scripts';
 import Slider from './custom/bjzm-slideshow.js';
 
+import BjzmLoadMorePosts from './custom/bjzm-load-more-posts';
+
 
 /**
  * Vendors
@@ -20,6 +22,12 @@ $(document).ready(function() {
 	new BjzmScripts;
 
 	$(".bjzm-slider__list").slick();
+
+	var LoadMorePosts = new BjzmLoadMorePosts({
+		query_vars: ASSETS.query_vars,
+		current_url: ASSETS.current_url
+	});
+	LoadMorePosts.init();
 
 	/*var slider = new Slider("home-slider", {
 		dots: true,

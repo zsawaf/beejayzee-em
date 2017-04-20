@@ -14,11 +14,15 @@ function bjzm_scripts()
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-2.2.4.min.js');
 
+		global $wp_query;
+
 		wp_register_script('main-scripts', get_template_directory_uri() . '/assets/dist/js/main-bundle.js');
 			wp_localize_script('main-scripts', ASSETS, array(
 				'assets_url' => get_template_directory_uri().'/assets/img',
 				'ajaxurl' => admin_url('admin-ajax.php'),
-				'current_page_info' => get_the_ID()
+				'current_page_info' => get_the_ID(),
+				'query_vars' => json_encode( $wp_query ),
+				'current_url' => home_url(add_query_arg(array(),$wp_query->request))
 			));
 		wp_enqueue_script('main-scripts');
 
