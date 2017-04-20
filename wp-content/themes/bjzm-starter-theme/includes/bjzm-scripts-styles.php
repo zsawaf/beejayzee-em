@@ -21,7 +21,7 @@ function bjzm_scripts()
 				'assets_url' => get_template_directory_uri().'/assets/img',
 				'ajaxurl' => admin_url('admin-ajax.php'),
 				'current_page_info' => get_the_ID(),
-				'query_vars' => json_encode( $wp_query ),
+				'query_vars' => json_encode( $wp_query->query_vars ),
 				'current_url' => home_url(add_query_arg(array(),$wp_query->request))
 			));
 		wp_enqueue_script('main-scripts');

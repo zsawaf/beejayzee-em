@@ -17,14 +17,67 @@ var BjzmLoadMorePosts = function () {
 
 		this.query_vars = JSON.parse(args.query_vars);
 		this.post_loop = args.post_loop;
-		console.log(args.current_url);
+		this.ajax_url = args.ajax_url;
+
+		this.page = this.query_vars.paged < 1 ? 1 : this.query_vars.paged;
+
+		this.setButton();
+		this.addButton();
+		this.clickEvents();
 	}
 
 	_createClass(BjzmLoadMorePosts, [{
+		key: 'setButton',
+		value: function setButton() {
+			this.button = (0, _jquery2.default)('<a href="#" class="load-more__button button bjzm-load-more-button">Load More Posts</a>');
+		}
+	}, {
 		key: 'init',
 		value: function init() {
-			console.log('you called me');
-			console.log(this.query_vars);
+			// console.log(this.query_vars);
+		}
+	}, {
+		key: 'addButton',
+		value: function addButton() {
+			this.post_loop.append(this.button);
+		}
+	}, {
+		key: 'clickEvents',
+		value: function clickEvents() {
+			var _this = this;
+
+			// $(document).on('click', '.bjzm-load-more-button', (e) => {
+			this.button.on('click', function (e) {
+				e.preventDefault();
+				console.log('click is ' + _this.page);
+				_this.page++;
+				_this.doAjax();
+			});
+		}
+	}, {
+		key: 'doAjax',
+		value: function doAjax() {
+			var _this2 = this;
+
+			_jquery2.default.ajax({
+				url: this.ajax_url,
+				type: 'post',
+				data: {
+					action: 'bjzm_next_posts',
+					query_vars: this.query_vars,
+					page: this.page
+				},
+				success: function success(response) {
+					_this2.setHtml(response);
+					_this2.button.data('page', 'asdf asdf sadf').html('Load to page ' + _this2.page);
+				}
+			});
+		}
+	}, {
+		key: 'setHtml',
+		value: function setHtml(html) {
+			// var html = JSON.parse(data);
+			this.post_loop.append(html);
 		}
 	}]);
 
@@ -649,12 +702,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	new _bjzmScripts2.default();
 
-	//$(".bjzm-slider__list").slick();
-
 	var LoadMorePosts = new _bjzmLoadMorePosts2.default({
 		query_vars: ASSETS.query_vars,
-		current_url: ASSETS.current_url
+		ajax_url: ASSETS.ajaxurl,
+		post_loop: (0, _jquery2.default)(".home-posts-loop")
 	});
+
 	LoadMorePosts.init();
 
 	var slider = new _bjzmSlideshow2.default("home_slider", {
