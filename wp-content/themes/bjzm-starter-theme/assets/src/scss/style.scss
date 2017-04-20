@@ -14,7 +14,9 @@ Text Domain: bjzm
 /* ----------------------------------------------------------------------------
  * 3rd Party
  * ------------------------------------------------------------------------- */
-//@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendor/bootstrap/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
+@import "vendor/slick";
 
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
@@ -22,30 +24,44 @@ Text Domain: bjzm
 @import "partials/variables";
 @import "partials/mixins";
 
+
+/* ----------------------------------------------------------------------------
+ * Common & Structure
+ * ------------------------------------------------------------------------- */
 @import "partials/structure";
+@import "partials/fonts";
+@import "partials/text";
+@import "partials/container";
+@import "partials/common";
+@import "partials/columns";
+@import "partials/socialmedia";
 
 
 
-// Pages
+/* ----------------------------------------------------------------------------
+ * Components
+ * ------------------------------------------------------------------------- */
+
+@import "partials/main-header";	/* matt */
+@import "partials/navigation";	/* matt */
+@import "partials/card";	/* matt */
+@import "partials/article";	/* matt */
+@import "partials/button";	/* matt */
+@import "partials/footer-main";	/* matt */
+@import "partials/hero";	/* zafer */
+@import "partials/slideshow";	/* zafer */
+@import "partials/button";		/* matt */
+@import "partials/gallery";		/* zafer */
+@import "partials/form";	/* zafer */
+
+/* ----------------------------------------------------------------------------
+ * Pages
+ * ------------------------------------------------------------------------- */
 @import "partials/home";
 @import "partials/blog";
 
-//Components
-@import "partials/fonts";
-@import "partials/container";
-@import "partials/common";
-@import "partials/main-header";
-@import "partials/socialmedia";
-@import "partials/columns";
-@import "partials/slideshow";
-@import "partials/form";
-
-/* ----------------------------------------------------------------------------
- * Normalize & Santize
- * ------------------------------------------------------------------------- */
-@import "vendor/normalize";
-@import "vendor/sanitize";
 
 
-/* WPCore */
-@import "partials/wpcore";
+
+
+

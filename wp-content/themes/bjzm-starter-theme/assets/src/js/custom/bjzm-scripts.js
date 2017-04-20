@@ -8,7 +8,7 @@ class BjzmScripts {
 	}
 
 	startMatchHeight() {
-		$('.some-section').matchHeight({
+		$('.bjzm-match-height').matchHeight({
 			byRow: false
 		});
 	}

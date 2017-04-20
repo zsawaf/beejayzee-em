@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "browserify": "^14.3.0",
+    "imagemin": "^5.2.2",
+    "imagemin-pngquant": "^5.0.0",
     "ramda": "^0.23.0",
     "vinyl-source-stream": "^1.1.0"
   },

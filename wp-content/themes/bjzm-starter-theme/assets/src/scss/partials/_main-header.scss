@@ -1,23 +1,43 @@
-$menu_bg_color: #c9c9c9;
-$menu_desktop_height: 150px;
-.header {
-	// modifiers
-	@at-root #{&}--main {
-		height: $menu_desktop_height;
-		background: $menu_bg_color;
-	}
-}
-.navigation {
-	// elements
-	height: 100%;
-
-	@at-root #{&}__menu  {
-		height: 100%;
-		ul {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: 100%;
+body {
+	&.logged-in.admin-bar {
+		.header-main {
+			top: 32px;	
 		}
 	}
+}
+.header-main {
+	height: $header-main-height;
+	border-bottom: solid thin $light-border-colour;
+	background-color: $blackish;
+
+	position: fixed;
+	width: 100%;
+	z-index: 500;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	.header-main-inner {
+		height: $header-main-height;
+	}
+	.l-row {
+		display: flex;
+		justify-content: space-between;
+	}
+	.header-main__site-logo {
+		height: $header-main-height;
+		@include flexVerticalCenter;
+	}
+
+}
+
+.header-main__site-logo-img {
+	max-width: 50px;
+}
+.header-main__navigation {
+	height: $header-main-height;
+}
+
+.header-main__navigation {
+	
 }
