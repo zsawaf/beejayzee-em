@@ -3,7 +3,7 @@
 <div class="bjzm-main-wrapper l-bjzm-main-wrapper">
 	
 	<?php 
-		do_hero(16);
+		// do_hero(16);
 		do_slideshow(16, "slider", "home_slider"); 
 	?>
 

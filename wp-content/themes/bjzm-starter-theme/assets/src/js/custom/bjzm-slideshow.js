@@ -84,7 +84,6 @@ class Slider {
 
 	handleDots() {
 		$(".slider__dots").on('click', function(e){
-			console.log("YOO");
 			e.preventDefault();
 		});
 	}

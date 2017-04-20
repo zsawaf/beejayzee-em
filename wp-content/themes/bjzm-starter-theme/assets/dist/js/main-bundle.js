@@ -147,7 +147,6 @@ var Slider = function () {
 		key: 'handleDots',
 		value: function handleDots() {
 			(0, _jquery2.default)(".slider__dots").on('click', function (e) {
-				console.log("YOO");
 				e.preventDefault();
 			});
 		}
