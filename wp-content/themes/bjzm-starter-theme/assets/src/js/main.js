@@ -19,7 +19,6 @@ $(document).ready(function() {
 
 	new BjzmScripts;
 
-
 	$(".bjzm-slider__list").slick();
 
 	/*var slider = new Slider("home-slider", {
