@@ -10,7 +10,7 @@ import BjzmScripts from './custom/bjzm-scripts';
 import Slider from './custom/bjzm-slideshow.js';
 
 import BjzmLoadMorePosts from './custom/bjzm-load-more-posts';
-
+import HeaderScroll from './custom/header-scroll';
 
 /**
  * Vendors
@@ -21,6 +21,8 @@ $(document).ready(function() {
 
 	new BjzmScripts;
 
+
+	/* Load More Posts */
 	var LoadMorePosts = new BjzmLoadMorePosts({
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
@@ -28,11 +30,29 @@ $(document).ready(function() {
 		post_loop: $(".posts-loop")
 	});
 
-	var slider = new Slider("home_slider", {
+	/* Homepage Slideshow*/
+	var HomeSlider = new Slider("home_slider", {
 		dots: true,
 		customPaging : function(slider, i) {
  			return '<a href="#" class="slider__dots"></a>';
  		}
  	});
 
+	/* Header Scroll */
+	var MainHeaderScroll = new HeaderScroll({
+		header: $(".header-main--collapse"),
+		threshold: 300,
+		class: 'header-main--collapsed'
+	});
+
+
 });
+
+
+
+
+
+
+
+
+

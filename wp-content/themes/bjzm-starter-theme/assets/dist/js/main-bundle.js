@@ -88,7 +88,7 @@ var BjzmLoadMorePosts = function () {
 
 module.exports = BjzmLoadMorePosts;
 
-},{"jquery":10}],2:[function(require,module,exports){
+},{"jquery":11}],2:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -122,7 +122,7 @@ var BjzmScripts = function () {
 
 module.exports = BjzmScripts;
 
-},{"jquery":10}],3:[function(require,module,exports){
+},{"jquery":11}],3:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* --------------------------------------------
@@ -248,7 +248,7 @@ var Slider = function () {
 
 module.exports = Slider;
 
-},{"../vendors/slider.min":9,"jquery":10}],4:[function(require,module,exports){
+},{"../vendors/slider.min":10,"jquery":11}],4:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -436,6 +436,79 @@ module.exports = SocialMedia;
 "use strict";
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var HeaderScroll = function () {
+	function HeaderScroll(args) {
+		_classCallCheck(this, HeaderScroll);
+
+		this.vw = (0, _jquery2.default)(window).width();
+		this.isOpen = false;
+		this.headerThreshold = args.threshold;
+		this.header = args.header;
+		this.class = args.class;
+
+		this._init();
+	}
+
+	_createClass(HeaderScroll, [{
+		key: '_init',
+		value: function _init() {
+
+			if (this.vw >= 768) {
+				this._doScroll();
+				this.doScroll();
+			} else {
+				this.header.addClass('open');
+			}
+		}
+	}, {
+		key: 'doScroll',
+		value: function doScroll() {
+			var _this = this;
+
+			(0, _jquery2.default)(window).on('scroll', function () {
+				_this._doScroll();
+			});
+		}
+	}, {
+		key: '_doScroll',
+		value: function _doScroll() {
+
+			this.scrollTop = (0, _jquery2.default)(window).scrollTop();
+
+			if (this.scrollTop > this.headerThreshold) {
+				if (!this.isOpen) {
+					this.isOpen = true;
+					console.log('yous collapse bitches');
+					this.header.addClass(this.class);
+				}
+			} else {
+				if (this.isOpen) {
+					this.isOpen = false;
+					console.log('back to normal');
+					this.header.removeClass(this.class);
+				}
+			}
+		}
+	}]);
+
+	return HeaderScroll;
+}();
+
+module.exports = HeaderScroll;
+
+},{"jquery":11}],7:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -663,7 +736,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	};
 })(jQuery);
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var _jquery = require('jquery');
@@ -694,16 +767,24 @@ var _bjzmLoadMorePosts = require('./custom/bjzm-load-more-posts');
 
 var _bjzmLoadMorePosts2 = _interopRequireDefault(_bjzmLoadMorePosts);
 
+var _headerScroll = require('./custom/header-scroll');
+
+var _headerScroll2 = _interopRequireDefault(_headerScroll);
+
 var _jquery3 = require('./vendors/jquery.matchHeight');
 
 var _jquery4 = _interopRequireDefault(_jquery3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Custom Scripts
+ */
 (0, _jquery2.default)(document).ready(function () {
 
 	new _bjzmScripts2.default();
 
+	/* Load More Posts */
 	var LoadMorePosts = new _bjzmLoadMorePosts2.default({
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
@@ -711,11 +792,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		post_loop: (0, _jquery2.default)(".posts-loop")
 	});
 
-	var slider = new _bjzmSlideshow2.default("home_slider", {
+	/* Homepage Slideshow*/
+	var HomeSlider = new _bjzmSlideshow2.default("home_slider", {
 		dots: true,
 		customPaging: function customPaging(slider, i) {
 			return '<a href="#" class="slider__dots"></a>';
 		}
+	});
+
+	/* Header Scroll */
+	var MainHeaderScroll = new _headerScroll2.default({
+		header: (0, _jquery2.default)(".header-main--collapse"),
+		threshold: 300,
+		class: 'header-main--collapsed'
 	});
 });
 
@@ -723,12 +812,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Vendors
  */
 
-
-/**
- * Custom Scripts
- */
-
-},{"./custom/bjzm-load-more-posts":1,"./custom/bjzm-scripts":2,"./custom/bjzm-slideshow.js":3,"./custom/bjzm-social-feeds":4,"./custom/forms":5,"./custom/single-page-updown":6,"./vendors/jquery.matchHeight":8,"jquery":10}],8:[function(require,module,exports){
+},{"./custom/bjzm-load-more-posts":1,"./custom/bjzm-scripts":2,"./custom/bjzm-slideshow.js":3,"./custom/bjzm-social-feeds":4,"./custom/forms":5,"./custom/header-scroll":6,"./custom/single-page-updown":7,"./vendors/jquery.matchHeight":9,"jquery":11}],9:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -1120,7 +1204,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     });
 });
 
-},{"jquery":10}],9:[function(require,module,exports){
+},{"jquery":11}],10:[function(require,module,exports){
 "use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -1549,7 +1633,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   };
 });
 
-},{"jquery":10}],10:[function(require,module,exports){
+},{"jquery":11}],11:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.1.1
  * https://jquery.com/
@@ -11771,6 +11855,6 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[7])
+},{}]},{},[8])
 
 //# sourceMappingURL=maps/main-bundle.js.map
