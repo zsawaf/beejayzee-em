@@ -21,13 +21,12 @@ $(document).ready(function() {
 
 	new BjzmScripts;
 
-	//$(".bjzm-slider__list").slick();
-
 	var LoadMorePosts = new BjzmLoadMorePosts({
 		query_vars: ASSETS.query_vars,
-		current_url: ASSETS.current_url
+		ajax_url: ASSETS.ajaxurl,
+		max_num_pages: ASSETS.max_num_pages,
+		post_loop: $(".home-posts-loop")
 	});
-	LoadMorePosts.init();
 
 	var slider = new Slider("home_slider", {
 		dots: true,

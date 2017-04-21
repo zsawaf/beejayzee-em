@@ -34,37 +34,51 @@
 			</div>
 
 	</div>
-	<div class="related_articles">
-		<h4>Related Articles</h4>
-	</div>
-	<div class="related">
-		<?php  
-			$categories = wp_get_post_terms(get_the_id(), 'category');
-			$tags = wp_get_post_terms(get_the_id(), 'tag');
-
-			lt($categories);
-			$args = array(
-				'post_type' => 'post',
-				'tax_query' => array(
-					'relation' => 'OR',
-					array(
-						'taxonomy' => 'category',
-						'field'    => 'slug',
-						'terms'    => $categories,
-					),
-					array(
-						'taxonomy' => 'tag',
-						'field'    => 'slug',
-						'terms'    => $tags,
-					),
-				),
-			);
-$query = new WP_Query( $args );
-		?>
-		<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'views/content-card' ); ?>
-		<?php endwhile; ?><?php endif; ?>
-	</div>
-
 </article>
+<div class="related">
+	<?php  
+		function map($term) {
+			return $term->slug;
+		}
+		$id = get_the_ID();
+		$categories = array_map("map", wp_get_post_terms($id, 'category'));
+		$tags = array_map("map", wp_get_post_terms($id, 'tag'));
+
+		$args = array(
+			'post__not_in'=> array($id),
+			'post_type' => 'post',
+			'tax_query' => array(
+				'relation' => 'OR',
+				array(
+					'taxonomy' => 'category',
+					'field'    => 'slug',
+					'terms'    => $categories,
+				),
+				array(
+					'taxonomy' => 'tag',
+					'field'    => 'slug',
+					'terms'    => $tags,
+				),
+			),
+		);
+
+		$related_query = new WP_Query($args);
+		if ($related_query->have_posts()) {
+			?>
+			<div class="related___title">
+				<h4>Related Articles</h4>
+			</div>
+			<div class="related__articles">
+			<?php
+			while($related_query->have_posts()) {
+				$related_query->the_post();
+				get_template_part( 'views/content-card' );
+			}
+			?>
+			</div>
+			<?php
+		}
+	?>
+
+</div>
 

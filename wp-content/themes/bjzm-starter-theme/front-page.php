@@ -10,7 +10,8 @@
 	<div class="l-bjzm-main-wrapper-inner">
 
 		<div class="blog-post-wrapper container">
-			<div class="row">
+			
+			<div class="row home-posts-loop">
 
 				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
@@ -19,6 +20,7 @@
 				<?php endwhile; ?><?php endif; ?>
 				
 			</div>
+
 		</div>
 		
 	</div>

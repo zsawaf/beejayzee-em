@@ -17,14 +17,70 @@ var BjzmLoadMorePosts = function () {
 
 		this.query_vars = JSON.parse(args.query_vars);
 		this.post_loop = args.post_loop;
-		console.log(args.current_url);
+		this.ajax_url = args.ajax_url;
+		this.max_num_pages = args.max_num_pages;
+
+		this.page = this.query_vars.paged < 1 ? 1 : this.query_vars.paged;
+
+		this.setButton();
+		this.addButton();
+		this.clickEvents();
 	}
 
 	_createClass(BjzmLoadMorePosts, [{
-		key: 'init',
-		value: function init() {
-			console.log('you called me');
-			console.log(this.query_vars);
+		key: 'setButton',
+		value: function setButton() {
+			this.loadMoreSection = (0, _jquery2.default)('<div class="bjzm-load-more"> <a href="#" class="load-more__button button bjzm-load-more__button button--flat">Load More Posts</a>  </div> ');
+		}
+	}, {
+		key: 'addButton',
+		value: function addButton() {
+			this.post_loop.append(this.loadMoreSection);
+		}
+	}, {
+		key: 'clickEvents',
+		value: function clickEvents() {
+			var _this = this;
+
+			(0, _jquery2.default)(document).on('click', '.bjzm-load-more a', function (e) {
+				e.preventDefault();
+				_this.page++;
+				var $button = (0, _jquery2.default)(e.currentTarget);
+				$button.html('Loading...');
+				_this.doAjax($button);
+			});
+		}
+	}, {
+		key: 'doAjax',
+		value: function doAjax($button) {
+			var _this2 = this;
+
+			_jquery2.default.ajax({
+				url: this.ajax_url,
+				type: 'post',
+				data: {
+					action: 'bjzm_next_posts',
+					query_vars: this.query_vars,
+					page: this.page
+				},
+				success: function success(response) {
+					_this2.handleResponse(response);
+					$button.html('Load More Posts');
+				}
+			});
+		}
+	}, {
+		key: 'handleResponse',
+		value: function handleResponse(html) {
+
+			this.loadMoreSection.remove();
+
+			if (this.page <= this.max_num_pages) {
+
+				this.post_loop.append(html);
+				var newLoadMoreSection = this.loadMoreSection.clone();
+				this.post_loop.append(this.loadMoreSection);
+			}
 		}
 	}]);
 
@@ -648,13 +704,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	new _bjzmScripts2.default();
 
-	//$(".bjzm-slider__list").slick();
-
 	var LoadMorePosts = new _bjzmLoadMorePosts2.default({
 		query_vars: ASSETS.query_vars,
-		current_url: ASSETS.current_url
+		ajax_url: ASSETS.ajaxurl,
+		max_num_pages: ASSETS.max_num_pages,
+		post_loop: (0, _jquery2.default)(".home-posts-loop")
 	});
-	LoadMorePosts.init();
 
 	var slider = new _bjzmSlideshow2.default("home_slider", {
 		dots: true,

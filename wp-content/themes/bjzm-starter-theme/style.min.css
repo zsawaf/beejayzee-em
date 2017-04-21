@@ -186,7 +186,8 @@ h5{margin-bottom:25px}.single-post .gallery{width:calc(100%)10px;margin-left:-5p
 .single-post .gallery .gallery-item{position:relative;width:33.3333333%;float:left;margin:0}
 .single-post .gallery .gallery-item .gallery-icon{padding:5px}.single-post .gallery.gallery-columns-2 .gallery-item{width:50%}
 .single-post .gallery.gallery-columns-3 .gallery-item{width:33.3333333%}.single-post .gallery.gallery-columns-4 .gallery-item{width:25%}
-.single-post .gallery.gallery-columns-5 .gallery-item{width:16.66666666%}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}
+.single-post .gallery.gallery-columns-5 .gallery-item{width:16.66666666%}.related__articles{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}
 @media(min-width:768px){.container{width:750px}}@media(min-width:992px){.container{width:970px}
 }@media(min-width:1200px){.container{width:1170px}}.columns.columns--float .col-2{float:left;width:calc(100% / 2)}
 .columns.columns--float .col-3{float:left;width:calc(100% / 3)}.columns.columns--float .col-4{float:left;width:calc(100% / 4)}
@@ -411,8 +412,8 @@ h5{margin-bottom:25px}.single-post .gallery{width:calc(100%)10px;margin-left:-5p
 }@media(max-width:320px){.columns.columns--flex .col-12_sm-m{width:calc(100% / 12)}
 }.socialmedia__instagram ul li{float:left;width:calc(100% / 3)}.socialmedia__instagram ul li img{-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center;width:100%;height:auto}
 .socialmedia--instagrampadding ul li{width:calc(calc(100% / 3) - (5px - (5px / 3)));margin-bottom:5px;margin-left:calc(5px)}
-.socialmedia--instagrampadding ul li:nth-child(3n+1){margin-left:0}body.logged-in.admin-bar .header-main{top:32px}
-.header-main{height:80px;border-bottom:solid thin #d6d6d6;background-color:#212f3d;position:fixed;width:100%;z-index:500;top:0;left:0;right:0;bottom:auto}
+.socialmedia--instagrampadding ul li:nth-child(3n+1){margin-left:0}.bjzm-load-more{display:block;overflow:hidden;text-align:center;margin:70px 0 50px;width:100%}
+body.logged-in.admin-bar .header-main{top:32px}.header-main{height:80px;border-bottom:solid thin #d6d6d6;background-color:#212f3d;position:fixed;width:100%;z-index:500;top:0;left:0;right:0;bottom:auto}
 .header-main .header-main-inner{height:80px}.header-main .l-row{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 .header-main .header-main__site-logo{height:80px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 .header-main__site-logo-img{max-width:50px}.header-main__navigation{height:80px}.navigation{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
@@ -432,8 +433,9 @@ h5{margin-bottom:25px}.single-post .gallery{width:calc(100%)10px;margin-left:-5p
 .post-nav__link:hover,.post-nav__link:active{opacity:.7}.post-nav__link--left{padding-left:35px;background-image:url("./assets/img/chevron-left.png");background-position:2px 50%}
 .post-nav__link--right{padding-right:35px;background-image:url("./assets/img/chevron-right.png");background-position:top 50% right 2px}
 .button{border:solid thin;padding:2px 8px;text-decoration:none;outline:0;font-family:inherit;color:inherit;display:inline-block}
-.footer-main{height:120px;background-color:#f4f6f7;margin-top:40px}.footer-main .l-footer-main-inner{height:120px;padding:30px 0}
-.footer-main .l-row{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
+.button--flat{border:0;background-color:#d35400;color:#fff;text-transform:uppercase;padding:10px 22px}
+.button--flat:hover{opacity:.8}.footer-main{height:120px;background-color:#f4f6f7;margin-top:40px}
+.footer-main .l-footer-main-inner{height:120px;padding:30px 0}.footer-main .l-row{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 .footer-main .l-column{width:33.3333%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 .footer-main .l-column:last-child{text-align:right}.footer-main__privacy-policy:link,.footer-main__privacy-policy:visited{color:#abb2b9;text-decoration:none;transition:color .2s ease;font-size:.85;font-weight:100}
 .footer-main__privacy-policy:hover,.footer-main__privacy-policy:active{text-transform:none;color:#8f99a2}
@@ -459,7 +461,8 @@ h5{margin-bottom:25px}.single-post .gallery{width:calc(100%)10px;margin-left:-5p
 }@media(max-width:480px){.home__slider-inner .home__slider__image{height:400px}.home__slider-inner .home__slider__overlay h4{font-size:2em}
 .home__slider-inner .home__slider__overlay .slider-text-container{padding:0}.home__slider-inner .slider-content-background{display:none}
 }.button{border:solid thin;padding:2px 8px;text-decoration:none;outline:0;font-family:inherit;color:inherit;display:inline-block}
-.form{margin-top:50px}.form .form__field{width:100%;position:relative;margin-bottom:15px}
+.button--flat{border:0;background-color:#d35400;color:#fff;text-transform:uppercase;padding:10px 22px}
+.button--flat:hover{opacity:.8}.form{margin-top:50px}.form .form__field{width:100%;position:relative;margin-bottom:15px}
 .form .form__field label{position:absolute;top:8px;left:15px;text-transform:uppercase;transition:all .3s}
 .form .form__field input{padding:10px 15px;width:100%;border-bottom:1px solid black}
 .form .required:after{content:"Required";position:absolute;right:15px;top:8px}
