@@ -3,6 +3,10 @@
 <div class="bjzm-main-wrapper l-bjzm-main-wrapper">
 	
 	<?php 
+<<<<<<< HEAD
+=======
+		// do_hero(16);
+>>>>>>> a5e2b05352ae50d85bf5e39123db20ea8f7d53e3
 		do_slideshow(16, "slider", "home_slider"); 
 	?>
 

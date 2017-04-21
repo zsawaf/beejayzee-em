@@ -20,7 +20,7 @@ import magnificPopup from 'magnific-popup';
 
 $(document).ready(function() {
 
-	new BjzmScripts;
+	new BjzmScripts();
 
 
 	/* Load More Posts */
