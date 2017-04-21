@@ -19,7 +19,7 @@ import matchHeight from './vendors/jquery.matchHeight';
 
 $(document).ready(function() {
 
-	new BjzmScripts;
+	new BjzmScripts();
 
 	var LoadMorePosts = new BjzmLoadMorePosts({
 		query_vars: ASSETS.query_vars,

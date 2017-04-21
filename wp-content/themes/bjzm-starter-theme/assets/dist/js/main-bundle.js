@@ -90,11 +90,11 @@ var BjzmLoadMorePosts = function () {
 module.exports = BjzmLoadMorePosts;
 
 },{"jquery":10}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -107,10 +107,20 @@ var BjzmScripts = function () {
 		_classCallCheck(this, BjzmScripts);
 
 		this.startMatchHeight();
+		this.do_hamburger();
 	}
 
 	_createClass(BjzmScripts, [{
-		key: 'startMatchHeight',
+		key: "do_hamburger",
+		value: function do_hamburger() {
+			(0, _jquery2.default)("a.hamburger").on("click", function (e) {
+				console.log("CLICKED");
+				e.preventDefault();
+				(0, _jquery2.default)("body").toggleClass("menu-active");
+			});
+		}
+	}, {
+		key: "startMatchHeight",
 		value: function startMatchHeight() {
 			(0, _jquery2.default)('.bjzm-match-height').matchHeight({
 				byRow: false

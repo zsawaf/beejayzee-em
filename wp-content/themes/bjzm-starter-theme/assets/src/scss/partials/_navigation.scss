@@ -3,7 +3,7 @@
 }
 
 .navigation__menu {
-	
+	margin: 0 !important;
 }
 
 .navigation__menu--align-right {
@@ -59,6 +59,29 @@
 	}
 }
 
+
+.mobile--navigation {
+	position: fixed;
+	background: $blackish;
+	z-index: 400;
+	height: 100vh;
+	width: 100%;
+	top: -100vh;
+
+	transition: top 0.3s;
+	.navigation__mobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+body.menu-active {
+	.mobile--navigation {
+		top: 0;
+	}
+}
 
 
 
