@@ -20,12 +20,17 @@ function srcset($full_width, $tablet_width, $mobile_width, $class="") {
 	";
 }
 
+/**
+ * Do hero image
+ * @param  [type] $page_id [description]
+ * @param  string $classes [description]
+ * @return [type]          [description]
+ */
 function do_hero($page_id, $classes="") {
 	$hero_text = get_field('hero_text', $page_id);
 	$hero_desktop = get_field('hero_image_desktop', $page_id);
 	$hero_tablet = get_field('hero_image_tablet', $page_id);
 	$hero_mobile = get_field('hero_image_mobile', $page_id);
-	lt($hero_desktop);
 	?>
 	<section class="hero <?php echo $classes ?>">
 		<?php srcset($hero_desktop, $hero_tablet, $hero_mobile, "hero__image") ?>
@@ -39,6 +44,7 @@ function do_hero($page_id, $classes="") {
 	</section>
 	<?php
 }
+
 /**
  * Build a slideshow
  * @param  [type] $page_id   [id of page]
@@ -121,4 +127,15 @@ function get_post_featured_image_url( $post_id, $size = 'thumbnail-size' ) {
 	$thumb_url = $thumb_url_array[0];
 
 	return $thumb_url;
+
+}
+
+
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' => 'BJZM Theme Options'
+	));
+	
 }

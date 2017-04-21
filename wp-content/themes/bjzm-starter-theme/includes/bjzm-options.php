@@ -72,8 +72,8 @@ class MySettingsPage
     {
         // This page will be under "Settings"
         add_options_page(
-            'Theme Settings', 
-            'Theme Settings', 
+            'BJZM Social Media', 
+            'BJZM Social Media', 
             'manage_options', 
             'theme_settings', 
             array( $this, 'create_admin_page' )

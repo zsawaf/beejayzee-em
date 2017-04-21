@@ -1,16 +1,24 @@
-<?php
-/**
- * The template for displaying archive pages.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div class="bjzm-main-wrapper l-bjzm-main-wrapper">
+	
+	<?php get_template_part( 'views/slideshow' ) ?>
 
-	<div class="bjzm">
+	<div class="l-bjzm-main-wrapper-inner">
 
+		<div class="blog-post-wrapper container">
+			<div class="row">
+
+				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'views/content-card' ); ?>
+				
+				<?php endwhile; ?><?php endif; ?>
+				
+			</div>
+		</div>
+		
 	</div>
-	<!-- /.aa_wrap -->
+</div>
 
 <?php get_footer(); ?>

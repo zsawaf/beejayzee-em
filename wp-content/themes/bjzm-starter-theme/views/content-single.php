@@ -22,6 +22,7 @@
 				<p class="post-header__category"><?php echo bjzm_get_post_category() ?></p>
 				<h2 class="post-header__title"><?php echo get_the_title(); ?></h2>
 				<p class="post-header__excerpt"><?php echo get_the_excerpt(); ?></p>
+				<p class="post-header__date"><?php echo the_date('d / m / y'); ?></p>
 			</header>
 
 			<div class="entry-content">
@@ -32,6 +33,37 @@
 
 			</div>
 
+	</div>
+	<div class="related_articles">
+		<h4>Related Articles</h4>
+	</div>
+	<div class="related">
+		<?php  
+			$categories = wp_get_post_terms(get_the_id(), 'category');
+			$tags = wp_get_post_terms(get_the_id(), 'tag');
+
+			lt($categories);
+			$args = array(
+				'post_type' => 'post',
+				'tax_query' => array(
+					'relation' => 'OR',
+					array(
+						'taxonomy' => 'category',
+						'field'    => 'slug',
+						'terms'    => $categories,
+					),
+					array(
+						'taxonomy' => 'tag',
+						'field'    => 'slug',
+						'terms'    => $tags,
+					),
+				),
+			);
+$query = new WP_Query( $args );
+		?>
+		<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'views/content-card' ); ?>
+		<?php endwhile; ?><?php endif; ?>
 	</div>
 
 </article>
