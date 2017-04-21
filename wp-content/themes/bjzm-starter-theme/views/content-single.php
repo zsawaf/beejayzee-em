@@ -19,12 +19,15 @@
 			</div>
 
 			<header class="post-header">
-				<p class="post-header__category"><?php echo bjzm_get_post_category() ?></p>
+				<ul class="post-header__meta-list">
+					<li class="post-header__post-category"><?php echo bjzm_get_post_category(true) ?></li>
+					<li class="post-header__post-date"><?php echo get_the_date('F j Y') ?></li>
+				</ul>
 				<h2 class="post-header__title"><?php echo get_the_title(); ?></h2>
 				<p class="post-header__excerpt"><?php echo get_the_excerpt(); ?></p>
 			</header>
 
-			<div class="entry-content">
+			<div class="content-single__entry-content entry-content">
 	
 				<div class="content-overlay">
 					<?php echo apply_filters('the_content', get_the_content()) ?>

@@ -1,4 +1,4 @@
-.single-post-wrapper {
+.content-single__entry-content {
 	.gallery {
 		width: calc(100%) + 10px;
 		margin-left: -5px;
@@ -55,8 +55,10 @@
 	ol {
 		margin-bottom: 25px;
 		padding-left: 25px;
+		list-style-type: disc;
 		li {
 			padding-bottom: 5px;
+			list-style-type: disc;
 		}
 	}
 
