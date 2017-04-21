@@ -30,6 +30,7 @@ $(document).ready(function() {
 		post_loop: $(".posts-loop")
 	});
 
+
 	/* Homepage Slideshow*/
 	var HomeSlider = new Slider("home_slider", {
 		dots: true,
@@ -37,6 +38,7 @@ $(document).ready(function() {
  			return '<a href="#" class="slider__dots"></a>';
  		}
  	});
+
 
 	/* Header Scroll */
 	var MainHeaderScroll = new HeaderScroll({

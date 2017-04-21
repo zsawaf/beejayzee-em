@@ -16,8 +16,6 @@ function bjzm_scripts()
 
 		global $wp_query;
 
-		lt($wp_query);
-
 		wp_register_script('main-scripts', get_template_directory_uri() . '/assets/dist/js/main-bundle.js');
 
 			wp_localize_script('main-scripts', ASSETS, array(

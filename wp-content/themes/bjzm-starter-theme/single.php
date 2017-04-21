@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div class="bjzm-main-wrapper l-bjzm-main-wrapper single-post">
+	<div class="bjzm-main-wrapper l-bjzm-main-wrapper single-post-wrapper">
 		<div class="l-bjzm-main-wrapper-inner">
 			<div class="container">
 				<?php while ( have_posts() ) : the_post(); ?>

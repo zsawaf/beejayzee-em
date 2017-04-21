@@ -10,14 +10,14 @@ class HeaderScroll  {
 		this.header = args.header;
 		this.class = args.class;
 
-		this._init();
+		this.init();
 
 	}
 
-	_init() {
+	init() {
 
 		if (this.vw >= 768) {
-			this._doScroll();
+			this.handleScroll();
 			this.doScroll();
 		}
 		else {
@@ -29,26 +29,24 @@ class HeaderScroll  {
 	doScroll() {
 
 		$(window).on('scroll', () => {
-			this._doScroll();
+			this.handleScroll();
 		});
 
 	}
 
-	_doScroll() {
+	handleScroll() {
 
 		this.scrollTop = $(window).scrollTop();
 
 		if( this.scrollTop > this.headerThreshold  ) {
 			if( !this.isOpen ) {
 				this.isOpen = true;
-				 console.log('yous collapse bitches');
 				this.header.addClass( this.class );
 			}
 		}
 		else {
 			if( this.isOpen ) {
 				this.isOpen = false;
-				 console.log('back to normal') ;
 				this.header.removeClass( this.class );
 			}
 		}

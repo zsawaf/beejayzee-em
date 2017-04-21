@@ -458,15 +458,15 @@ var HeaderScroll = function () {
 		this.header = args.header;
 		this.class = args.class;
 
-		this._init();
+		this.init();
 	}
 
 	_createClass(HeaderScroll, [{
-		key: '_init',
-		value: function _init() {
+		key: 'init',
+		value: function init() {
 
 			if (this.vw >= 768) {
-				this._doScroll();
+				this.handleScroll();
 				this.doScroll();
 			} else {
 				this.header.addClass('open');
@@ -478,25 +478,23 @@ var HeaderScroll = function () {
 			var _this = this;
 
 			(0, _jquery2.default)(window).on('scroll', function () {
-				_this._doScroll();
+				_this.handleScroll();
 			});
 		}
 	}, {
-		key: '_doScroll',
-		value: function _doScroll() {
+		key: 'handleScroll',
+		value: function handleScroll() {
 
 			this.scrollTop = (0, _jquery2.default)(window).scrollTop();
 
 			if (this.scrollTop > this.headerThreshold) {
 				if (!this.isOpen) {
 					this.isOpen = true;
-					console.log('yous collapse bitches');
 					this.header.addClass(this.class);
 				}
 			} else {
 				if (this.isOpen) {
 					this.isOpen = false;
-					console.log('back to normal');
 					this.header.removeClass(this.class);
 				}
 			}
