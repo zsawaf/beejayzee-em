@@ -20,6 +20,16 @@ function srcset($full_width, $tablet_width, $mobile_width, $class="") {
 	";
 }
 
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] =  'body-' . $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
 function do_hero($page_id, $classes="") {
 	$hero_text = get_field('hero_text', $page_id);
 	$hero_desktop = get_field('hero_image_desktop', $page_id);

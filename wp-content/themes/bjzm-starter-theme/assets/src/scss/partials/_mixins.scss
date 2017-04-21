@@ -28,6 +28,14 @@
       text-indent: -999px;
 }
 
+@mixin linkTransitionOpacity( $time: 0.2s, $easing: ease ) {
+    transition: opacity $time $easing;
+}
+
+@mixin linkTransitionOpacityHover( $opacity: 0.7 ) {
+    opacity: $opacity;
+}
+
 
 /*
 * @horizontalcenter 

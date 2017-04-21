@@ -74,11 +74,10 @@ var BjzmLoadMorePosts = function () {
 		value: function handleResponse(html) {
 
 			this.loadMoreSection.remove();
+			this.post_loop.append(html);
+			var newLoadMoreSection = this.loadMoreSection.clone();
 
-			if (this.page <= this.max_num_pages) {
-
-				this.post_loop.append(html);
-				var newLoadMoreSection = this.loadMoreSection.clone();
+			if (this.page < this.max_num_pages) {
 				this.post_loop.append(this.loadMoreSection);
 			}
 		}
@@ -709,7 +708,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
 		max_num_pages: ASSETS.max_num_pages,
-		post_loop: (0, _jquery2.default)(".home-posts-loop")
+		post_loop: (0, _jquery2.default)(".posts-loop")
 	});
 
 	var slider = new _bjzmSlideshow2.default("home_slider", {

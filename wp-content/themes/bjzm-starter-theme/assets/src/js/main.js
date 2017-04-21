@@ -25,7 +25,7 @@ $(document).ready(function() {
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
 		max_num_pages: ASSETS.max_num_pages,
-		post_loop: $(".home-posts-loop")
+		post_loop: $(".posts-loop")
 	});
 
 	var slider = new Slider("home_slider", {

@@ -7,9 +7,7 @@ body {
 }
 .header-main {
 	height: $header-main-height;
-	border-bottom: solid thin $light-border-colour;
 	background-color: $blackish;
-
 	position: fixed;
 	width: 100%;
 	z-index: 500;

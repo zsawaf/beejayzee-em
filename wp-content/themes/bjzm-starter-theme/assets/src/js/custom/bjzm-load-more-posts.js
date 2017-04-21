@@ -56,15 +56,13 @@ class BjzmLoadMorePosts {
 	handleResponse(html) {
 
 		this.loadMoreSection.remove();
-
-		if( this.page <= this.max_num_pages ) {
-
-			this.post_loop.append(html);
-			var newLoadMoreSection = this.loadMoreSection.clone();
-			this.post_loop.append(this.loadMoreSection);
-
-		}	
+		this.post_loop.append(html);
+		var newLoadMoreSection = this.loadMoreSection.clone();
 		
+		if( this.page < this.max_num_pages ) {
+			this.post_loop.append(this.loadMoreSection);
+		}	
+
 	}
 
 }

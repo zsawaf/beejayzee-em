@@ -6,6 +6,10 @@
 	font-family: inherit;
 	color: inherit;
 	display: inline-block;
+	@include linkTransitionOpacity;
+	&:hover, &:active {
+		@include linkTransitionOpacityHover;
+	}
 	&--flat {
 		border: none;
 		background-color: $carrot;
