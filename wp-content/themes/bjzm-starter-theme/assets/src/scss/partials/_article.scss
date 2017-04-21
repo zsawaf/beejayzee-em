@@ -43,6 +43,7 @@
 .post-nav {
 	height: 90px;
 	@include flexVerticalCenter;
+	clear: both;
 	.ll-post-nav-inner {
 		display: flex;
 		justify-content: space-between;
