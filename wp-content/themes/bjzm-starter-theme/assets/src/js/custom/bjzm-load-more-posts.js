@@ -26,6 +26,7 @@ class BjzmLoadMorePosts {
 	}
 
 	clickEvents() {
+
 		$(document).on('click', '.bjzm-load-more a', (e) => {
 			e.preventDefault();
 			this.page ++;
@@ -33,6 +34,7 @@ class BjzmLoadMorePosts {
 			$button.html('Loading...');
 			this.doAjax( $button );
 		});
+		
 	}
 
 	doAjax($button) {

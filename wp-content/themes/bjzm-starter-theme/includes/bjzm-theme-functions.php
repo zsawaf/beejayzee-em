@@ -134,8 +134,7 @@ function get_post_featured_image_url( $post_id, $size = 'thumbnail-size' ) {
 
 }
 
-add_action( 'wp_ajax_nopriv_bjzm_next_posts', 'bjzm_next_posts' );
-add_action( 'wp_ajax_bjzm_next_posts', 'bjzm_next_posts' );
+
 function bjzm_next_posts() {
 
 	$query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
@@ -156,7 +155,9 @@ function bjzm_next_posts() {
 	}
 
 	die();
+	
 }
-
+add_action( 'wp_ajax_nopriv_bjzm_next_posts', 'bjzm_next_posts' );
+add_action( 'wp_ajax_bjzm_next_posts', 'bjzm_next_posts' );
 
 

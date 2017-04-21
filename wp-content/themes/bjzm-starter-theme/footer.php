@@ -4,7 +4,7 @@
 		<div class="container l-container">
 			<div class="l-row">
 				<div class="l-column l-column-left">
-					<a href="#" class="footer-main__privacy-policy">Privacy Policy</a>
+					<a href="#privacy-policy" class="footer-main__privacy-policy open-inline-lightbox">Privacy Policy</a>
 				</div>
 				<div class="l-column l-column-center">
 					
@@ -18,6 +18,12 @@
 		</div>
 	</div>
 </footer>
+
+<div id="privacy-policy" class="lightbox lightbox--privacy-policy mfp-hide">
+	<div class="lightbox__container">
+		<?php echo get_field('privacy_policy', 'option') ?>
+	</div>
+</div>
 
 <?php wp_footer(); ?>
 

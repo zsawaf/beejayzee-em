@@ -17,6 +17,7 @@ Text Domain: bjzm
 @import "vendor/bootstrap/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 @import "vendor/slick";
+@import "../../../node_modules/magnific-popup/src/css/main";
 
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
@@ -35,6 +36,7 @@ Text Domain: bjzm
 @import "partials/container";
 @import "partials/common";
 @import "partials/columns";
+@import "partials/lightbox";
 @import "partials/socialmedia";
 @import "partials/bjzm-load-more";
 

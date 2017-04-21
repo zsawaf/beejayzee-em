@@ -16,6 +16,7 @@ import HeaderScroll from './custom/header-scroll';
  * Vendors
  */
 import matchHeight from './vendors/jquery.matchHeight';
+import magnificPopup from 'magnific-popup';
 
 $(document).ready(function() {
 
@@ -45,6 +46,14 @@ $(document).ready(function() {
 		header: $(".header-main--collapse"),
 		threshold: 300,
 		class: 'header-main--collapsed'
+	});
+
+	/*privacy policy*/
+	$('.open-inline-lightbox').magnificPopup({
+ 		type: 'inline',
+		midClick: true,
+		removalDelay: 300,
+		mainClass: 'mfp-fade mfp-wrap--privacy-policy'
 	});
 
 
