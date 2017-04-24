@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="blog-post card count-<?php echo $key ?> bjzm-match-height post-<?php the_ID(); ?> col-md-4">
+<article id="post-<?php the_ID(); ?>" class="blog-post card count-<?php echo $key ?> bjzm-match-height post-<?php the_ID(); ?>">
 	
 	<div class="blog-post-inner l-card-inner">
 
