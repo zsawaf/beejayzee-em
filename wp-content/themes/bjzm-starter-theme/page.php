@@ -12,19 +12,27 @@
 
 get_header(); ?>
 
-	<div class="bjzm-main-wrapper l-bjzm-main-wrapper page">
-		<div class="l-bjzm-main-wrapper-inner">
-			<div class="container">
+<div class="bjzm-wrapper bjzm-wrapper--page">
+	
+	<div class="bjzm-wrapper__inner">
+		
+		<div class="bjzm-content">
+			
+			<div class="bjzm-content__container container">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'views/content', 'page' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
-				
-			</div>
-		</div>
-	</div>
+				<?php endwhile; ?><?php endif; ?>
 
-<?php get_sidebar(); ?>
+			</div><!-- .bjzm-content__container -->
+
+		</div><!-- .bjzm-content -->
+
+	</div><!-- .bjzm-wrapper__inner -->
+
+</div><!-- .bjzm-wrapper -->
+
+
 <?php get_footer(); ?>
