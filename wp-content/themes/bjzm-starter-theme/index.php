@@ -2,7 +2,7 @@
 	<div class="bjzm">
 		<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 		
-			<?php get_template_part( 'views/content' 'blog') ?>	
+			<?php get_template_part( 'views/content', 'card') ?>
 			
 			<?php endwhile; ?>
 		<?php endif; ?>
