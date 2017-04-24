@@ -9,18 +9,13 @@
 
 	<div class="l-bjzm-main-wrapper-inner">
 
-		<div class="blog-post-wrapper container">
-			
-			<div class="row posts-loop posts-loop--home">
-			
+		<div class="home-wrapper container">
 
-				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+			<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'views/content-card' ); ?>
-				
-				<?php endwhile; ?><?php endif; ?>
-				
-			</div>
+				<?php get_template_part( 'views/content-home' ); ?>
+			
+			<?php endwhile; ?><?php endif; ?>
 
 		</div>
 		

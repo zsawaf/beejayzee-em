@@ -202,8 +202,8 @@ img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;bo
 .mfp-arrow-right{-webkit-transform-origin:100%;-ms-transform-origin:100%;transform-origin:100%}
 .mfp-container{padding-left:6px;padding-right:6px}}*,*:after,*:before{box-sizing:border-box;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility}
 html{height:100%;min-height:100%}body{font-size:16px;margin:0;background:#fbfcfc;height:100%;min-height:100%}
-html,body{font-family:'Roboto',sans-serif}.bjzm-main-wrapper{padding-top:calc(35px + 130px)}
-.home .bjzm-main-wrapper{padding-top:calc(35px + 130px - 40px)}.clear:before,.clear:after{content:' ';display:table}
+html,body{font-family:'Roboto',sans-serif}.bjzm-main-wrapper{padding-top:calc(130px)}
+.blog .bjzm-main-wrapper{padding-top:calc(130px - 40px)}.clear:before,.clear:after{content:' ';display:table}
 .clear:after{clear:both}.clear{*zoom:1}.container{height:100%}img{max-width:100%;height:auto}
 li{list-style:none}input:focus{outline:0}h1,h2,h3,h4,h5,h6,p,ul,li,ol{margin:0;padding:0}
 a{font-size:1em;-webkit-transition:all .3s;transition:all .3s}a:link,a:visited,a:active,a:focus{outline:0}
@@ -494,7 +494,7 @@ body.menu-active .mobile--navigation{top:0}.card{margin-bottom:20px}.card__read-
 .post-header__category{color:#d35400;margin:10px 0 0 0}.post-header__title{font-size:2.8em;margin:10px 0 5px}
 .post-header__excerpt{font-size:1.1em;margin:0 0 10px}.post-header__meta-list{list-style-type:none;overflow:hidden;margin:10px 0 25px;padding:0}
 .post-header__meta-list li{display:inline-block;margin-right:30px;font-size:1.1em}
-.post-header--loop .post-header__title{font-size:1.8em}.post-nav{height:90px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
+.post-header--loop .post-header__title{font-size:1.8em}.post-nav{height:90px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;clear:both}
 .post-nav .ll-post-nav-inner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}
 .post-nav--right{text-align:right}.post-nav__link:link,.post-nav__link:visited{text-decoration:none;-webkit-transition:opacity .2s;transition:opacity .2s;color:#d35400;text-transform:uppercase;background-repeat:no-repeat;background-size:1em;padding-top:7px;padding-bottom:7px;display:inline-block}
 .post-nav__link:hover,.post-nav__link:active{opacity:.7}.post-nav__link--left{padding-left:35px;background-image:url("./assets/img/chevron-left.png");background-position:2px 50%}

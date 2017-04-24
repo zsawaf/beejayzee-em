@@ -32,12 +32,12 @@ html, body {
 }
 
 .bjzm-main-wrapper {
-    padding-top: calc( 35px + #{$header-main-height} );
+    padding-top: calc( #{$header-main-height} );
 }
 
-.home {
+.blog {
     .bjzm-main-wrapper {
-        padding-top: calc( 35px + #{$header-main-height} - 40px );
+        padding-top: calc( #{$header-main-height} - 40px );
     }
 }
 
