@@ -12,8 +12,8 @@
 
 get_header(); ?>
 
-	<div class="bjzm-main-wrapper l-bjzm-main-wrapper page">
-		<div class="l-bjzm-main-wrapper-inner">
+	<div class="bjzm-wrapper bjzm-wrapper--page">
+		<div class="bjzm-wrapper__inner">
 			<div class="container">
 
 				<?php while ( have_posts() ) : the_post(); ?>
