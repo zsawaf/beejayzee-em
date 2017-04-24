@@ -1,5 +1,6 @@
 <?php
-	function bjzm_add_thumbnail_sizes() {
+
+function bjzm_add_thumbnail_sizes() {
 	
 	/*post/page content*/
 	add_image_size( 'full-width', 1920, 1100, false );
@@ -11,7 +12,7 @@
 	add_image_size( 'hero-image-mobile', 480, 242, true );
 
 	/*post galleries*/
-	add_image_size( 'gallery-thumbnail', 720, 497, true );	
+	add_image_size( 'gallery-thumbnail', 720, 497, true );
 	add_image_size( 'gallery-thumbnail-tall', 720, 600, true );	
 
 	/*single featured images*/
@@ -22,6 +23,12 @@
 	/*post loopts*/
 	add_image_size( 'masonry-featured-image', 991, 700, false );
 	add_image_size( 'card-featured-image', 991, 700, true );
+
+	/*content blocks*/
+	add_image_size( 'content-block-full-width', 1920, 600, true );	
+	add_image_size( 'content-block-half-width', 960, 570, true );		/*same for each width option*/
+	add_image_size( 'content-block-tablet', 991, 420, true );			/*same for each width option*/
+	add_image_size( 'content-block-mobile', 480, 345, true );		/*same for each width option*/
 
 }
 bjzm_add_thumbnail_sizes();

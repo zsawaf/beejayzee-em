@@ -11,9 +11,8 @@ get_header(); ?>
 		
 		<div class="bjzm-content">
 			
-			<div class="bjzm-content__container container">
+			<div class="bjzm-content__container">
 				
-
 			<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'views/content', 'hero-grid' ); ?>

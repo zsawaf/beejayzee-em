@@ -1,0 +1,13 @@
+.bjzm-row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.content-block {
+	&--full-width {
+		width: 100%;
+	}
+	&--half-width {
+		width: 50%;
+	}
+}
