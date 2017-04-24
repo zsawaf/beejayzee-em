@@ -63,6 +63,9 @@ class BjzmLoadMorePosts {
 		
 		if( this.page < this.max_num_pages ) {
 			this.post_loop.append(this.loadMoreSection);
+			$('.bjzm-match-height').matchHeight({
+				byRow: false
+			});
 		}	
 
 	}

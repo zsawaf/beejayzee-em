@@ -16,9 +16,9 @@ class BjzmScripts {
 	}
 
 	startMatchHeight() {
-		$('.bjzm-match-height').matchHeight({
+	/*	$('.bjzm-match-height').matchHeight({
 			byRow: false
-		});
+		});*/
 	}
 	
 }

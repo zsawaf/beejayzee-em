@@ -79,6 +79,9 @@ var BjzmLoadMorePosts = function () {
 
 			if (this.page < this.max_num_pages) {
 				this.post_loop.append(this.loadMoreSection);
+				(0, _jquery2.default)('.bjzm-match-height').matchHeight({
+					byRow: false
+				});
 			}
 		}
 	}]);
@@ -121,9 +124,9 @@ var BjzmScripts = function () {
 	}, {
 		key: "startMatchHeight",
 		value: function startMatchHeight() {
-			(0, _jquery2.default)('.bjzm-match-height').matchHeight({
-				byRow: false
-			});
+			/*	$('.bjzm-match-height').matchHeight({
+   		byRow: false
+   	});*/
 		}
 	}]);
 
