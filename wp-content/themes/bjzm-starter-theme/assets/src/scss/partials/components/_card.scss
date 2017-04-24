@@ -7,12 +7,10 @@ $tablet_margin: 10px;
 	height: 100%;
 }
 .card {
-	width: calc(33.3333% - 10px);
-	margin-left: $desktop_margin;
+	// width: calc(33.3333% - 10px);
+	// margin-left: $desktop_margin;
 	margin-bottom: 20px;
-	&:nth-child(3n+1) {
-		margin-left: 0;
-	}
+	
 	&__image {}
 	&__header {}
 	&__content {
@@ -28,24 +26,24 @@ $tablet_margin: 10px;
 }
 
 @media #{$lg_t_mq} {
-	.card {
-		width: calc(50% - 10px);
-		margin-left: $tablet_margin;
-		&:nth-child(3n+1) {
-			margin-left: $tablet_margin;
-		}
-		&:nth-child(2n+1) {
-			margin-left: 0;
-		}
-	}
+	// .card {
+	// 	width: calc(50% - 10px);
+	// 	margin-left: $tablet_margin;
+	// 	&:nth-child(3n+1) {
+	// 		margin-left: $tablet_margin;
+	// 	}
+	// 	&:nth-child(2n+1) {
+	// 		margin-left: 0;
+	// 	}
+	// }
 }
 
 @media #{$sm_t_mq} {
-	.card {
-		width: 100%;
-		margin-left: 0;
-		&:nth-child(3n+1) {
-			margin-left: 0;
-		}
-	}
+	// .card {
+	// 	width: 100%;
+	// 	margin-left: 0;
+	// 	&:nth-child(3n+1) {
+	// 		margin-left: 0;
+	// 	}
+	// }
 }

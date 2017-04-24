@@ -22,23 +22,19 @@ Text Domain: bjzm
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
  * ------------------------------------------------------------------------- */
-@import "partials/variables";
-@import "partials/mixins";
+@import "partials/common/variables";
+@import "partials/common/mixins";
 
 
 /* ----------------------------------------------------------------------------
  * Common & Structure
  * ------------------------------------------------------------------------- */
-@import "partials/structure";
-@import "partials/fonts";
-@import "partials/text";
-@import "partials/single";
-@import "partials/container";
-@import "partials/common";
-@import "partials/columns";
-@import "partials/lightbox";
-@import "partials/socialmedia";
-@import "partials/bjzm-load-more";
+@import "partials/common/structure";
+@import "partials/common/fonts";
+@import "partials/common/text";
+@import "partials/common/container";
+@import "partials/common/common";
+@import "partials/common/columns";
 
 
 
@@ -46,24 +42,29 @@ Text Domain: bjzm
  * Components
  * ------------------------------------------------------------------------- */
 
-@import "partials/main-header";	/* matt */
-@import "partials/navigation";	/* matt */
-@import "partials/card";	/* matt */
-@import "partials/article";	/* matt */
-@import "partials/button";	/* matt */
-@import "partials/footer-main";	/* matt */
-@import "partials/hero";	/* zafer */
-@import "partials/slideshow";	/* zafer */
-@import "partials/button";		/* matt */
-@import "partials/gallery";		/* zafer */
-@import "partials/form";	/* zafer */
+@import "partials/components/main-header";	/* matt */
+@import "partials/components/navigation";	/* matt */
+@import "partials/components/card";		/* matt */
+@import "partials/components/article";	/* matt */
+@import "partials/components/button";	/* matt */
+@import "partials/components/footer-main";	/* matt */
+@import "partials/components/hero";			/* zafer */
+@import "partials/components/slideshow";	/* zafer */
+@import "partials/components/button";		/* matt */
+@import "partials/components/gallery";		/* zafer */
+@import "partials/components/form";	
+@import "partials/components/lightbox";
+@import "partials/components/socialmedia";
+@import "partials/components/bjzm-load-more";
 
 /* ----------------------------------------------------------------------------
  * Pages
  * ------------------------------------------------------------------------- */
-@import "partials/home";
-@import "partials/blog";
-@import "partials/fourohfour";
+@import "partials/pages/home";
+@import "partials/pages/blog";
+@import "partials/pages/fourohfour";
+@import "partials/pages/single";
+
 
 
 
