@@ -1,10 +1,28 @@
 <?php get_header(); ?>
-	<div class="bjzm">
-		<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-		
-			<?php get_template_part( 'views/content' 'blog') ?>	
+
+<div class="bjzm-main-wrapper l-bjzm-main-wrapper">
+	
+	<?php 
+		do_slideshow(16, "slider", "home_slider"); 
+	?>
+
+	<div class="l-bjzm-main-wrapper-inner">
+
+		<div class="blog-post-wrapper container">
 			
-			<?php endwhile; ?>
-		<?php endif; ?>
+			<div class="row posts-loop posts-loop--home">
+
+				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'views/content-card' ); ?>
+				
+				<?php endwhile; ?><?php endif; ?>
+				
+			</div>
+
+		</div>
+		
 	</div>
+</div>
+
 <?php get_footer(); ?>
