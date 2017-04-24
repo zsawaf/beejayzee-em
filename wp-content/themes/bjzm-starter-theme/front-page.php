@@ -12,6 +12,7 @@
 		<div class="blog-post-wrapper container">
 			
 			<div class="row posts-loop posts-loop--home">
+			
 
 				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
