@@ -541,6 +541,6 @@ body.menu-active .mobile--navigation{top:0}.l-card-inner{display:-webkit-box;dis
 .form .form__field input{padding:10px 15px;width:100%;border-bottom:1px solid black}
 .form .required:after{content:"Required";position:absolute;right:15px;top:8px}
 .form .float--label label{font-size:.5em;top:0;left:0}.form .field--error:after{color:red}
-.form--success .form__response{width:100%;text-align:center;padding:0 50px}.posts-loop{margin-top:60px}
+.form--success .form__response{width:100%;text-align:center;padding:0 50px}.post-loop{margin-top:60px}
 .fourohfour{height:calc(100vh - 230px)}.fourohfour>.container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}
 .fourohfour__content{margin-top:130px}

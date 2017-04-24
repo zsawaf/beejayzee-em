@@ -1,28 +1,36 @@
+
 <?php get_header(); ?>
 
-<div class="bjzm-main-wrapper l-bjzm-main-wrapper">
+<div class="bjzm-wrapper bjzm-wrapper--index">
 	
-	<?php 
-		do_slideshow(16, "slider", "home_slider"); 
-	?>
+	<div class="bjzm-wrapper__inner">
 
-	<div class="l-bjzm-main-wrapper-inner">
-
-		<div class="blog-post-wrapper container">
-			
-			<div class="row posts-loop posts-loop--home no-gutters">
-
-				<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'views/content-card' ); ?>
-				
-				<?php endwhile; ?><?php endif; ?>
-				
-			</div>
-
-		</div>
+		<?php do_slideshow(16, "slider", "home_slider"); ?>
 		
-	</div>
-</div>
+		<div class="bjzm-content">
+
+			<div class="bjzm-content__container container">
+				
+				<div class="post-loop post-loop--home">
+				
+					<div class="bjzm-content__row row">	
+
+					<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
+
+						<?php get_template_part( 'views/content-card' ); ?>
+					
+					<?php endwhile; ?><?php endif; ?>
+
+					</div><!-- .post-loop -->
+
+				</div><!-- .bjzm-content__row  -->
+
+			</div><!-- .bjzm-content__container -->
+
+		</div><!-- .bjzm-content -->
+		
+	</div><!-- .bjzm-wrapper__inner -->
+
+</div><!-- .bjzm-wrapper -->
 
 <?php get_footer(); ?>
