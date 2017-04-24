@@ -23,7 +23,11 @@ $tablet_margin: 10px;
 			margin-left: $tablet_margin;
 		}
 		&:nth-child(2n+1) {
+<<<<<<< HEAD
 			
+=======
+			margin-left: 0;
+>>>>>>> dev
 		}
 	}
 }

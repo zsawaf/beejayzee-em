@@ -1,5 +1,4 @@
-<?php
-/**
+<?php /**
  * The header for our theme.
  *
  */
@@ -13,12 +12,50 @@
 
 <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-	<header class="header header--main">
-		<div class="container">
-			<nav class="header__navigation navigation">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu' ) ); ?>
-			</nav>
+	<header class="header header-main header-main--collapse">
+		<div class="l-main-header-inner">
+			<div class="container l-container">
+				<div class="l-row">
+
+					<div class="l-column l-column-left">
+						<div class="header-main__site-logo">
+							<a href="<?php echo get_site_url() ?>">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/img/site-logo.png" alt="" class="header-main__site-logo-img">
+							</a>
+						</div>
+					</div>
+
+					<div class="l-column l-column-right">
+						<nav class="header-main__navigation navigation">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'navigation__menu navigation__menu--align-right' ) ); ?>
+						</nav>
+					</div>
+
+				</div>
+			</div>
 		</div>
 	</header>
+	<header class="header header--mobile">
+		<div class="l-main-header-inner">
+			<div class="l-column l-column-left">
+				<div class="header__logo">
+					<a href="<?php echo get_site_url() ?>">
+						<img src="<?php echo get_template_directory_uri() ?>/assets/img/site-logo.png" alt="" class="header-main__site-logo-img">
+					</a>
+				</div>
+			</div>
+			<div class="l-column l-column-right">
+				<div class="l-hamburger-wrapper">
+					<a class="hamburger" href="#">
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<nav class="mobile--navigation navigation">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mobile-menu', 'menu_class' => 'navigation__mobile' ) ); ?>
+	</nav>

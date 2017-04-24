@@ -1,0 +1,9 @@
+.fourohfour {
+	height: calc(100vh - #{$header-main-height + 100});
+	> .container {
+		@include flexVerticalCenter();
+	}
+}
+.fourohfour__content {
+	margin-top: $header-main-height;
+}

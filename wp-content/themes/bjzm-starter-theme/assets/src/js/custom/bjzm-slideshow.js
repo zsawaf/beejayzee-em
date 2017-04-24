@@ -25,6 +25,8 @@
  * 	
  * -------------------------------------------- */
 
+import $ from 'jquery';
+import slick from  '../vendors/slider.min';
 
 class Slider {
 	constructor(id=null, settings=null) {
@@ -35,12 +37,13 @@ class Slider {
 		this.id = id;
 		this.selector = "#"+id;
 		this.settings = settings;
-
+		
 		this.initialize();
 	}
 
 	initialize() {
 		$(this.selector).slick(this.settings);
+		this.handleDots();
 	}
 
 	destroy() {
@@ -78,7 +81,15 @@ class Slider {
 	getCurrentSlide() {
 		return $(this.selector).slick('slickCurrentSlide');
 	}
+
+	handleDots() {
+		$(".slider__dots").on('click', function(e){
+			e.preventDefault();
+		});
+	}
 }
+
+module.exports = Slider;
 
 
 

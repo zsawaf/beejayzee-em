@@ -14,7 +14,10 @@ Text Domain: bjzm
 /* ----------------------------------------------------------------------------
  * 3rd Party
  * ------------------------------------------------------------------------- */
-//@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "vendor/bootstrap/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
+@import "vendor/slick";
+@import "../../../node_modules/magnific-popup/src/css/main";
 
 /* ----------------------------------------------------------------------------
  * Mixins & Variables
@@ -22,30 +25,48 @@ Text Domain: bjzm
 @import "partials/variables";
 @import "partials/mixins";
 
-@import "partials/structure";
-
-
-
-// Pages
-@import "partials/home";
-@import "partials/blog";
-
-//Components
-@import "partials/fonts";
-@import "partials/container";
-@import "partials/common";
-@import "partials/main-header";
-@import "partials/socialmedia";
-@import "partials/columns";
-@import "partials/slideshow";
-@import "partials/form";
 
 /* ----------------------------------------------------------------------------
- * Normalize & Santize
+ * Common & Structure
  * ------------------------------------------------------------------------- */
-@import "vendor/normalize";
-@import "vendor/sanitize";
+@import "partials/structure";
+@import "partials/fonts";
+@import "partials/text";
+@import "partials/single";
+@import "partials/container";
+@import "partials/common";
+@import "partials/columns";
+@import "partials/lightbox";
+@import "partials/socialmedia";
+@import "partials/bjzm-load-more";
 
 
-/* WPCore */
-@import "partials/wpcore";
+
+/* ----------------------------------------------------------------------------
+ * Components
+ * ------------------------------------------------------------------------- */
+
+@import "partials/main-header";	/* matt */
+@import "partials/navigation";	/* matt */
+@import "partials/card";	/* matt */
+@import "partials/article";	/* matt */
+@import "partials/button";	/* matt */
+@import "partials/footer-main";	/* matt */
+@import "partials/hero";	/* zafer */
+@import "partials/slideshow";	/* zafer */
+@import "partials/button";		/* matt */
+@import "partials/gallery";		/* zafer */
+@import "partials/form";	/* zafer */
+
+/* ----------------------------------------------------------------------------
+ * Pages
+ * ------------------------------------------------------------------------- */
+@import "partials/home";
+@import "partials/blog";
+@import "partials/fourohfour";
+
+
+
+
+
+

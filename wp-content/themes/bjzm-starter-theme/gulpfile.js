@@ -96,6 +96,10 @@ function bundle(bundler) {
 
 	bundler
 		.bundle() // Start bundle
+		.on('error', function(err){
+			console.log(err.message);
+			this.emit('end');
+		})
 		.pipe(source(config.js.src)) // Entry point
 		.pipe(buffer()) // Convert to gulp pipeline
 		.pipe(rename(config.js.outputFile)) // Rename output from 'main.js'
@@ -104,6 +108,7 @@ function bundle(bundler) {
 		.pipe(gulp.dest(config.js.outputDir)) // Save 'bundle' to build/
 		.pipe(livereload()) // Reload browser if relevant
 		.pipe(notify({ message: 'Browserify bundle complete!', onLast: true }));
+
 }
 
 gulp.task('bundle', function() {
@@ -112,11 +117,8 @@ gulp.task('bundle', function() {
 			debug: true
 		})
 		.transform(babelify, { presets: ['es2015'] }); // Then, babelify, with ES2015 preset
-	bundle(bundler); // Chain other options -- sourcemaps, rename, etc.
+		bundle(bundler); // Chain other options -- sourcemaps, rename, etc.
 });
-
-
-
 
 
 /**
@@ -336,7 +338,7 @@ gulp.task('buildZip', function() {
 
 // Package Distributable Theme
 gulp.task('build', function(cb) {
-	runSequence('styles', 'cleanup', 'vendorsJs', 'bundle', 'buildFiles', 'buildImages', 'buildZip', 'cleanupFinal', cb);
+	runSequence('styles', 'cleanup', 'bundle', 'buildFiles', 'buildImages', 'buildZip', 'cleanupFinal', cb);
 });
 
 

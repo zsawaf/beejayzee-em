@@ -1,0 +1,23 @@
+.button {
+	border: solid thin;
+	padding: 2px 8px;
+	text-decoration: none;
+	outline: none;
+	font-family: inherit;
+	color: inherit;
+	display: inline-block;
+	@include linkTransitionOpacity;
+	&:hover, &:active {
+		@include linkTransitionOpacityHover;
+	}
+	&--flat {
+		border: none;
+		background-color: $carrot;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 10px 22px;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

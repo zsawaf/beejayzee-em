@@ -1,0 +1,68 @@
+.mfp-bg {
+	background-color: #000;
+	opacity: 0.8;
+}
+.mfp-wrap {
+
+	.mfp-content {
+		max-width: 450px;
+		margin: 0 auto;
+		font-size: 15px;
+		color: #fff;
+		p {
+			margin-bottom: 20px;
+			color: #fff;
+		}
+	}
+	.mfp-close {
+		color: #fff;
+		top: -50px;
+		right: -60px;
+		@include linkTransitionOpacity;
+		&:hover, &:active {
+			@include linkTransitionOpacityHover;
+		}
+	}
+}
+
+
+
+
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out;
+	-moz-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	transform: translateY(-30px);
+	-webkit-transition: all 0.15s ease-out;
+	-moz-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+	transition-delay: 0.2s;
+	transform: translateY(0);
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+	transform: translateY(-30px);
+}
+
+

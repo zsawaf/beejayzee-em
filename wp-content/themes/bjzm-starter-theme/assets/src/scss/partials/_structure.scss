@@ -22,9 +22,23 @@ html {
 body {
     font-size: 16px;
     margin: 0;
-    background: #fff;
+    background: $whiteish;
     height:100%;
     min-height:100%;
+}
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bjzm-main-wrapper {
+    padding-top: calc( #{$header-main-height} );
+}
+
+.blog {
+    .bjzm-main-wrapper {
+        padding-top: calc( #{$header-main-height} - 40px );
+    }
 }
 
 /* clear */
@@ -42,55 +56,18 @@ body {
     *zoom: 1;
 }
 
-// container should inherit height of parent
 .container {
     height: 100%;
 }
 
 img {
-    width: 100%;
-    max-width: none;
+    max-width: 100%;
     height: auto;
 }
 
-// Remove default margins
-h1, h2, h3, h4, h5, h6, p, ul, li, ol {
-    margin: 0;
-    padding: 0;
-}
 
 li {
     list-style: none;
-}
-
-// set font-sizes + margins
-h1 {
-
-}
-h2 {
-
-}
-h3 {
-
-}
-h4 {
-
-}
-
-p {
-    font-size: 1em;
-}
-
-// normalize
-a {
-    font-size: 1em;
-    transition: all 0.3s;
-    &:link, &:visited, &:active, &:focus {
-        outline: 0;
-    }
-    &:hover {
-        text-decoration: none;
-    }
 }
 
 input:focus {

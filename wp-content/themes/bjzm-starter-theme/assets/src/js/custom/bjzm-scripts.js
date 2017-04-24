@@ -3,12 +3,20 @@ import $ from 'jquery';
 class BjzmScripts {
 	
 	constructor() {
-		 console.log('just bjzm scripts');
 		 this.startMatchHeight();
+		 this.do_hamburger();
+	}
+
+	do_hamburger() {
+		$("a.hamburger").on("click", function(e){
+			console.log("CLICKED");
+			e.preventDefault();
+			$("body").toggleClass("menu-active");
+		})
 	}
 
 	startMatchHeight() {
-		$('.some-section').matchHeight({
+		$('.bjzm-match-height').matchHeight({
 			byRow: false
 		});
 	}

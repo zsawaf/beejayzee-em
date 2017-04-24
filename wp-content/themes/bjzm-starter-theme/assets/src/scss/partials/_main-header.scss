@@ -1,23 +1,136 @@
-$menu_bg_color: #c9c9c9;
-$menu_desktop_height: 150px;
-.header {
-	// modifiers
-	@at-root #{&}--main {
-		height: $menu_desktop_height;
-		background: $menu_bg_color;
+body {
+	&.logged-in.admin-bar {
+		.header-main {
+			//top: 32px;	
+		}
 	}
 }
-.navigation {
-	// elements
-	height: 100%;
+.header--mobile {
+	display: none;
+}
 
-	@at-root #{&}__menu  {
-		height: 100%;
-		ul {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: 100%;
+.header-main {
+	height: $header-main-height;
+	background-color: $blackish;
+	position: fixed;
+	width: 100%;
+	z-index: 500;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	.header-main-inner {
+		height: $header-main-height;
+	}
+	.l-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.header-main__site-logo {
+		height: $header-main-height;
+		@include flexVerticalCenter;
+	}
+
+	&--collapse {
+		transition: height 0.3s ease;
+		.header-main-inner,
+		.header-main__site-logo,
+		.header-main__navigation {
+			transition: height 0.3s ease;
+		}
+	}
+
+	&--collapsed {
+		height: $collapse-header-height;
+		.header-main-inner,
+		.header-main__site-logo,
+		.header-main__navigation {
+			height: $collapse-header-height;
+		}
+
+	}
+
+}
+
+.header-main__site-logo-img {
+	max-width: 50px;
+}
+.header-main__navigation {
+	height: $header-main-height;
+}
+
+
+@media #{$sm_t_mq} {
+	.l-hamburger-wrapper {
+		position: relative;
+		height: $header-mobile-height;
+	}
+	.header-main {
+		display: none;
+	}
+	.header--mobile {
+		display: block;
+		background: $blackish;
+		position: fixed;
+		width: 100%;
+		z-index: 500;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: auto;
+	}
+	.l-main-header-inner {
+		height: $header-mobile-height;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.header__logo {
+		margin-left: 23px;
+	}
+	.hamburger {
+		cursor: pointer;
+		position: absolute;
+		right: 23px;
+		display: block;
+		height: 35px;
+		width: 40px;
+		top: 16px;
+		span {
+			width: 22px;
+			height: 2px;
+			background: #fff;
+			position: absolute;
+			top: 6px;
+			left: 9px;
+			margin-top: 10px;
+			transition: all 0.3s;
+			&:first-child {
+				top: 0;
+			}
+			&:last-child {
+				top: 12px;
+			}
+		}
+	}
+	body.menu-active {
+		.hamburger {
+			span {
+				background: #fff;
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:first-child {
+					top: 6px;
+					transform: rotate(-45deg);
+				}
+				&:last-child {
+					top: 6px;
+					transform: rotate(45deg);
+				}
+			}
 		}
 	}
 }

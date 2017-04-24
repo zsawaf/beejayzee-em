@@ -1,17 +1,34 @@
 /**
- * 
+ * Colours
  */
+$light-border-colour: #D6D6D6;
 
-$header_font: 'Kamerik';
-$body_font: 'Kamerik';
-$alt_font: '';
+/* greys */
+$black: #17202A;
+$blackish: #212F3D;
+$dark-blue: #273746;
+$darkish-blue: #2C3E50;
+$lightblue: #566573;
+$grey: #808B96;
+$light-grey: #ABB2B9;
 
-$primary_color: '';
+$white: #FDFEFE;
+$whiteish: #FBFCFC;
+$clouds: #F7F9F9;
+$cloud-grey: #F4F6F7;
+
+/* splash colours */
+$carrot: #d35400;
+
+/* header heights */
+$header-main-height: 130px;
+$collapse-header-height: 75px;
+$header-mobile-height: 65px;
+
 
 /*
 * MEDIA QUERIES
  */
-
 $lg_d_mq: "(min-width: 1920px)"; // lg_d: large desktop
 $sm_d_mq: "(max-width: 1200px)"; // sm_d: small desktop
 $lg_t_mq: "(max-width: 991px)"; //  lg_t: large tablet
