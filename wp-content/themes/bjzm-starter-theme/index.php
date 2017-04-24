@@ -11,9 +11,9 @@
 			
 			<div class="bjzm-content__container container">
 				
-				<div class="bjzm-content__row row">
-					
-					<div class="post-loop post-loop--home">
+				<div class="post-loop post-loop--home">
+				
+					<div class="bjzm-content__row row">	
 
 					<?php if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
 
