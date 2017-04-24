@@ -47,6 +47,7 @@ $(document).ready(function() {
 		threshold: 300,
 		class: 'header-main--collapsed'
 	});
+	
 
 	/*privacy policy*/
 	$('.open-inline-lightbox').magnificPopup({
