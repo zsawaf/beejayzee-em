@@ -15,7 +15,9 @@ $content_blocks = get_field('content_blocks');
 
 				<div class="content-block count-<?php echo $key ?> <?php echo $content_block['classes'] ?>  content-block--<?php echo $content_block['block_width'] ?>">
 					<div class="content-block__copy">
-						<?php echo $content_block['content'] ?>
+						<div class="content-block__copy-inner">
+							<?php echo $content_block['content'] ?>
+						</div>
 					</div>
 					<div class="content-block__image">
 						<?php  get_content_block_image($content_block) ?>
