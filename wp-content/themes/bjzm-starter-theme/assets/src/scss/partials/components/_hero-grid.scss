@@ -46,6 +46,18 @@
 	}
 }
 
+@media #{$lg_t_mq} {
+	
+	.content-block {
+		&--full-width,
+		&--half-width,
+		&--quarter-width {
+			width: 100%;
+		}
+	}
+
+}
+
 
 
 

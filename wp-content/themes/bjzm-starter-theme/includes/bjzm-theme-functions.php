@@ -176,8 +176,9 @@ function get_content_block_image($content_block, $class) {
 	$mobile_size = 'content-block-mobile';
 
 	$full_width = $content_block['background_image']['sizes'][$full_width_size];
-	$tablet_width = $content_block['background_image']['sizes'][$tablet_size];
-	$mobile_width = $content_block['background_image']['sizes'][$mobile_size];
+	$tablet_width = ( $content_block['use_wp_thumbnail_sizes'] ) ? $content_block['background_image']['sizes'][$tablet_size] : $content_block['background_image_tablet']['url'];
+	$mobile_width = ( $content_block['use_wp_thumbnail_sizes'] ) ? $content_block['background_image']['sizes'][$mobile_size] : $content_block['background_image_mobile']['url'];
+	
 	?>
 
 		<picture>
