@@ -171,16 +171,22 @@ add_action( 'wp_ajax_bjzm_next_posts', 'bjzm_next_posts' );
 
 function get_content_block_image($content_block) {
 	
-	$full_width_size = 'content-block-' . $content_block['block_size'];
+	$full_width_size = 'content-block-' . $content_block['block_width'];
 	$tablet_size = 'content-block-tablet';
 	$mobile_size = 'content-block-mobile';
 
 	$full_width = $content_block['background_image']['sizes'][$full_width_size];
 	$tablet_width = $content_block['background_image']['sizes'][$tablet_size];
 	$mobile_width = $content_block['background_image']['sizes'][$mobile_size];
+	?>
 
-	srcset($full_width, $tablet_width, $mobile_width) ;
+		<picture>
+			<source media='(min-width: 991px)' srcset="<?php echo $full_width; ?>">
+			<source media='(min-width: 480px)' srcset="<?php echo $tablet_width; ?>">
+			<img srcset="<?php echo $mobile_width; ?>" alt=''>
+		</picture>
 
+<?php
 }
 
 
