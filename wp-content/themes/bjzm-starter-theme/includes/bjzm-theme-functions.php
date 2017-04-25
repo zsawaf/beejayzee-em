@@ -167,3 +167,43 @@ add_action( 'wp_ajax_nopriv_bjzm_next_posts', 'bjzm_next_posts' );
 add_action( 'wp_ajax_bjzm_next_posts', 'bjzm_next_posts' );
 
 
+
+
+function get_content_block_image($content_block, $class) {
+	
+	$full_width_size = 'content-block-' . $content_block['block_width'];
+	$tablet_size = 'content-block-tablet';
+	$mobile_size = 'content-block-mobile';
+
+	$full_width = $content_block['background_image']['sizes'][$full_width_size];
+	$tablet_width = ( $content_block['use_wp_thumbnail_sizes'] ) ? $content_block['background_image']['sizes'][$tablet_size] : $content_block['background_image_tablet']['url'];
+	$mobile_width = ( $content_block['use_wp_thumbnail_sizes'] ) ? $content_block['background_image']['sizes'][$mobile_size] : $content_block['background_image_mobile']['url'];
+	
+	?>
+
+		<picture>
+			<source media='(min-width: 991px)' srcset="<?php echo $full_width; ?>">
+			<source media='(min-width: 480px)' srcset="<?php echo $tablet_width; ?>">
+			<img srcset="<?php echo $mobile_width; ?>" class="content-block__picture content-block__picture--<?php echo $content_block['block_width'] ?>" alt=''>
+		</picture>
+
+<?php
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -42,12 +42,12 @@ html, body {
   }
 }
 
-.bjzm-main-wrapper {
+.bjzm-wrapper {
     padding-top: calc( #{$header-main-height} );
 }
 
 .blog {
-    .bjzm-main-wrapper {
+    .bjzm-wrapper {
         padding-top: calc( #{$header-main-height} - 40px );
     }
 }

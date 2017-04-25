@@ -803,7 +803,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		query_vars: ASSETS.query_vars,
 		ajax_url: ASSETS.ajaxurl,
 		max_num_pages: ASSETS.max_num_pages,
-		post_loop: (0, _jquery2.default)(".post-loop")
+		post_loop: (0, _jquery2.default)(".bjzm-content__row--posts")
 	});
 
 	/* Homepage Slideshow*/
